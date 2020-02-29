@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5eb8ba3b-d7e9-41ce-bf53-8ed5f7e166c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hnu/repository/CommentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hnu/repository/ResourceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hnu/repository/SuppdemaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hnu/repository/UserInfoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/CommentRepository.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SuppdemaRepository.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/UserInfoRepository.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnu/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hnu/entity/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnu/entity/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hnu/entity/Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnu/entity/Suppdema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hnu/entity/Suppdema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnu/entity/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hnu/entity/UserInfo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -100,7 +89,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/ResourceRepository.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -188,6 +181,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapping/mapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/CommentRepository.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/SuppdemaRepository.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/ResourceRepository.xml" />
       </list>
     </option>
   </component>
@@ -348,7 +342,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582951432440</updated>
       <workItem from="1582951435118" duration="412000" />
-      <workItem from="1582967268860" duration="2796000" />
+      <workItem from="1582967268860" duration="3181000" />
     </task>
     <task id="LOCAL-00001" summary="添加mybatis依赖，配置数据源">
       <created>1582967710663</created>
@@ -364,14 +358,21 @@
       <option name="project" value="LOCAL" />
       <updated>1582967725266</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="添加mapping映射文件">
+      <created>1582977726322</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582977726322</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3208000" />
+    <option name="totallyTimeSpent" value="3593000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="335" y="59" width="1400" height="771" extended-state="0" />
+    <frame x="40" y="59" width="1400" height="771" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2533137" />
@@ -414,7 +415,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加mybatis依赖，配置数据源" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加mybatis依赖，配置数据源" />
+    <MESSAGE value="添加mapping映射文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加mapping映射文件" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/HelloController.java">
@@ -708,7 +710,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/ResourceRepository.xml">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
