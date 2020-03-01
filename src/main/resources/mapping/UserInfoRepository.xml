@@ -3,5 +3,14 @@
 
 <!-- mapper 为根元素节点， 一个namespace对应一个repo -->
 <mapper namespace="com.hnu.repository.UserInfoRepository">
+    
+    <select id="findByOpenId" parameterType="java.lang.String" resultType="com.hnu.entity.UserInfo">
+        select * from medical_resources_userinfo where open_id = #{openId}
+    </select>
+
+    <insert id="save" parameterType="com.hnu.entity.UserInfo">
+        insert into medical_resources_userinfo(u_type, open_id, nick_name, avatar_url, gender, store_name, m_longitude, m_latitude, nation, city, province, district, street, street_number)
+        values(#{uType}, #{openId}, #{nickName}, #{avatarUrl}, #{gender}, #{storeName}, #{mLongitude}, #{mLatitude}, #{nation}, #{city}, #{province}, #{district}, #{street}, #{streetNumber} )
+    </insert>
 
 </mapper>

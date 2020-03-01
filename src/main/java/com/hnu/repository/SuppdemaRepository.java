@@ -1,4 +1,4 @@
 package com.hnu.repository;
 
-public class SuppdemaRepository {
+public interface SuppdemaRepository {
 }

@@ -1,11 +1,18 @@
 package com.hnu.entity;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
+import java.math.BigDecimal;
+
 public class UserInfo {
 
-    private int id;
+    @JsonAlias(value = "u_type")
     private int uType;
-    private int openid;
+    @JsonAlias(value = "open_id")
+    private String openId;
+    @JsonAlias(value = "nick_name")
     private String nickName;
+    @JsonAlias(value = "avatar_url")
     private String avatarUrl;
     private String gender;
     private String nation;
@@ -13,18 +20,14 @@ public class UserInfo {
     private String city;
     private String district;
     private String street;
+    @JsonAlias(value = "street_number")
     private String streetNumber;
+    @JsonAlias(value = "store_name")
     private String storeName;
-    private float lon;
-    private float lat;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    @JsonAlias(value = "m_longitude")
+    private BigDecimal mLongitude;
+    @JsonAlias(value = "m_latitude")
+    private BigDecimal mLatitude;
 
     public int getuType() {
         return uType;
@@ -34,12 +37,12 @@ public class UserInfo {
         this.uType = uType;
     }
 
-    public int getOpenid() {
-        return openid;
+    public String getOpenId() {
+        return openId;
     }
 
-    public void setOpenid(int openid) {
-        this.openid = openid;
+    public void setOpenId(String openId) {
+        this.openId = openId;
     }
 
     public String getNickName() {
@@ -122,19 +125,23 @@ public class UserInfo {
         this.storeName = storeName;
     }
 
-    public float getLon() {
-        return lon;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public void setLon(float lon) {
-        this.lon = lon;
+    public BigDecimal getmLongitude() {
+        return mLongitude;
     }
 
-    public float getLat() {
-        return lat;
+    public void setmLongitude(BigDecimal mLongitude) {
+        this.mLongitude = mLongitude;
     }
 
-    public void setLat(float lat) {
-        this.lat = lat;
+    public BigDecimal getmLatitude() {
+        return mLatitude;
+    }
+
+    public void setmLatitude(BigDecimal mLatitude) {
+        this.mLatitude = mLatitude;
     }
 }
