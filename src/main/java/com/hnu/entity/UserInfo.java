@@ -4,12 +4,12 @@ public class UserInfo {
 
     private int id;
     private int uType;
-    private int openId;
+    private int openid;
     private String nickName;
     private String avatarUrl;
-    private String genver;
+    private String gender;
     private String nation;
-    private String privince;
+    private String province;
     private String city;
     private String district;
     private String street;
@@ -34,12 +34,12 @@ public class UserInfo {
         this.uType = uType;
     }
 
-    public int getOpenId() {
-        return openId;
+    public int getOpenid() {
+        return openid;
     }
 
-    public void setOpenId(int openId) {
-        this.openId = openId;
+    public void setOpenid(int openid) {
+        this.openid = openid;
     }
 
     public String getNickName() {
@@ -58,12 +58,12 @@ public class UserInfo {
         this.avatarUrl = avatarUrl;
     }
 
-    public String getGenver() {
-        return genver;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGenver(String genver) {
-        this.genver = genver;
+    public void setGenvdr(String gender) {
+        this.gender = gender;
     }
 
     public String getNation() {
@@ -74,12 +74,12 @@ public class UserInfo {
         this.nation = nation;
     }
 
-    public String getPrivince() {
-        return privince;
+    public String getProvince() {
+        return province;
     }
 
-    public void setPrivince(String privince) {
-        this.privince = privince;
+    public void setProvince(String province) {
+        this.province = province;
     }
 
     public String getCity() {
