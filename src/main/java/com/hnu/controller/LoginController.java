@@ -10,7 +10,7 @@ import java.util.Map;
 public class LoginController {
 
     private static String appid="wxb038b5f6187b1412";//微信小程序的appid
-    private static String secret="";//微信小程序的secret
+    private static String secret="a86c4374806324475a28450df4e2f57c";//微信小程序的secret
 
     /**
      * 用户登录的接口
