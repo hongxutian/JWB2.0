@@ -1,16 +1,2 @@
+target
 
-.idea/compiler.xml
-.idea/encodings.xml
-.idea/misc.xml
-.idea/uiDesigner.xml
-.idea/vcs.xml
-jwb20.iml
-pom.xml
-src/main/java/com/hnu/controller/HelloController.java
-src/main/java/com/hnu/JWBApplication.java
-src/main/resources/application.yml
-src/main/webapp/index.jsp
-src/main/webapp/WEB-INF/web.xml
-target/classes/com/hnu/controller/HelloController.class
-target/classes/com/hnu/JWBApplication.class
-*.xml

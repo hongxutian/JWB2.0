@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
 @MapperScan("com.hnu.repository")
-@EnableTransactionManagement
 public class JWBApplication {
 
     public static void main(String[] args) {

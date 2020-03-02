@@ -10,7 +10,7 @@ import java.util.Map;
 public class LoginController {
 
     private static String appid="wxb038b5f6187b1412";//微信小程序的appid
-    private static String secret="";//微信小程序的secret
+    private static String secret="a86c4374806324475a28450df4e2f57c";//微信小程序的secret
 
     /**
      * 用户登录的接口
@@ -26,8 +26,7 @@ public class LoginController {
         req.put("secret",secret);
         req.put("js_code",js_code);
         req.put("grant_type","authorization_code");
-        String res = WebRequestUtil.wrGET("https://api.weixin.qq.com/sns/jscode2session",req);
-        return res;
+        return WebRequestUtil.wrGET("https://api.weixin.qq.com/sns/jscode2session",req);
     }
 
     /**
@@ -55,10 +54,9 @@ public class LoginController {
      * @param src 待判断的字符串
      * @return 是JSON返回一个JSON对象，否则返回null
      */
-    public static JSONObject isJSON(String src){
+    private static JSONObject isJSON(String src){
         try {
-            JSONObject res = JSONObject.parseObject(src);
-            return res;
+            return JSONObject.parseObject(src);
         }catch (RuntimeException e){
             return null;
         }

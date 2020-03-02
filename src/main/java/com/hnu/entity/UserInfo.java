@@ -1,30 +1,33 @@
 package com.hnu.entity;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
+import java.math.BigDecimal;
+
 public class UserInfo {
 
-    private int id;
+    @JsonAlias(value = "u_type")
     private int uType;
-    private int openId;
+    @JsonAlias(value = "open_id")
+    private String openId;
+    @JsonAlias(value = "nick_name")
     private String nickName;
+    @JsonAlias(value = "avatar_url")
     private String avatarUrl;
-    private String genver;
+    private String gender;
     private String nation;
-    private String privince;
+    private String province;
     private String city;
     private String district;
     private String street;
+    @JsonAlias(value = "street_number")
     private String streetNumber;
+    @JsonAlias(value = "store_name")
     private String storeName;
-    private float lon;
-    private float lat;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    @JsonAlias(value = "m_longitude")
+    private BigDecimal mLongitude;
+    @JsonAlias(value = "m_latitude")
+    private BigDecimal mLatitude;
 
     public int getuType() {
         return uType;
@@ -34,11 +37,11 @@ public class UserInfo {
         this.uType = uType;
     }
 
-    public int getOpenId() {
+    public String getOpenId() {
         return openId;
     }
 
-    public void setOpenId(int openId) {
+    public void setOpenId(String openId) {
         this.openId = openId;
     }
 
@@ -58,12 +61,12 @@ public class UserInfo {
         this.avatarUrl = avatarUrl;
     }
 
-    public String getGenver() {
-        return genver;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGenver(String genver) {
-        this.genver = genver;
+    public void setGenvdr(String gender) {
+        this.gender = gender;
     }
 
     public String getNation() {
@@ -74,12 +77,12 @@ public class UserInfo {
         this.nation = nation;
     }
 
-    public String getPrivince() {
-        return privince;
+    public String getProvince() {
+        return province;
     }
 
-    public void setPrivince(String privince) {
-        this.privince = privince;
+    public void setProvince(String province) {
+        this.province = province;
     }
 
     public String getCity() {
@@ -122,19 +125,43 @@ public class UserInfo {
         this.storeName = storeName;
     }
 
-    public float getLon() {
-        return lon;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public void setLon(float lon) {
-        this.lon = lon;
+    public BigDecimal getmLongitude() {
+        return mLongitude;
     }
 
-    public float getLat() {
-        return lat;
+    public void setmLongitude(BigDecimal mLongitude) {
+        this.mLongitude = mLongitude;
     }
 
-    public void setLat(float lat) {
-        this.lat = lat;
+    public BigDecimal getmLatitude() {
+        return mLatitude;
+    }
+
+    public void setmLatitude(BigDecimal mLatitude) {
+        this.mLatitude = mLatitude;
+    }
+
+    @Override
+    public String toString() {
+        return "UserInfo{" +
+                "uType=" + uType +
+                ", openId='" + openId + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", gender='" + gender + '\'' +
+                ", nation='" + nation + '\'' +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", district='" + district + '\'' +
+                ", street='" + street + '\'' +
+                ", streetNumber='" + streetNumber + '\'' +
+                ", storeName='" + storeName + '\'' +
+                ", mLongitude=" + mLongitude +
+                ", mLatitude=" + mLatitude +
+                '}';
     }
 }

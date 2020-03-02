@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- mapper 为根元素节点， 一个namespace对应一个repo -->
+<mapper namespace="com.hnu.repository.DemandRepository">
+
+    <resultMap id="demand" type="com.hnu.entity.Demand">
+        <result column="s_lon" property="sLon"/>
+        <result column="s_lat" property="sLat"/>
+        <result column="s_nation" property="sNation"/>
+        <result column="s_city" property="sCity"/>
+        <result column="s_province" property="sProvince"/>
+        <result column="s_district" property="sDistrict"/>
+        <result column="s_street" property="sStreet"/>
+        <result column="s_street_number" property="sStreetNumber"/>
+        <result column="s_content" property="sContent"/>
+        <result column="s_type" property="sType"/>
+        <result column="s_range" property="sRange"/>
+        <result column="s_aging" property="sAging"/>
+        <result column="s_subtime" property="sSubtime"/>
+        <result column="store_name" property="storeName"/>
+        <result column="u_id_id" property="uIdId"/>
+    </resultMap>
+
+<!--  查询语句  -->
+    <select id="findByRange" parameterType="com.hnu.entity.Limit" resultMap="demand">
+       select * from medical_resources_demand d where d.s_lon &lt;= #{maxLon}
+       and d.s_lon &gt;= #{minLon} and d.s_lat &lt;= #{maxLat} and d.s_lat &gt;= #{minLat} and d.s_subtime &gt;= #{startTime} and d.s_subtime &lt;= #{endTime}
+    </select>
+
+</mapper>

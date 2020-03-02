@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <!-- mapper 为根元素节点， 一个namespace对应一个repo -->
-<mapper namespace="com.hnu.repository.ResourceRepository">
+<mapper namespace="com.hnu.repository.MaterialRepository">
 
     <insert id="insertResources" parameterType="java.util.List">
         insert into medical_resources_material

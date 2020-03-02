@@ -6,6 +6,7 @@ import okhttp3.*;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.Objects;
 
 public class WebRequestUtil {
 
@@ -15,12 +16,12 @@ public class WebRequestUtil {
     //网络请求的实验函数，调用方式WebRequestUtil.webRequest();
     public static String wrGET(String url, Map<String, String> content) {
         //添加请求的参数
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append(url);
         if (!content.isEmpty()) {
             sb.append("?");
             for (String key : content.keySet()) {
-                sb.append(key + "=" + content.get(key) + "&");
+                sb.append(key).append("=").append(content.get(key)).append("&");
             }
             sb.deleteCharAt(sb.length() - 1);
         }
@@ -37,7 +38,7 @@ public class WebRequestUtil {
 
         try {
             Response res = call.execute();
-            return res.body().string();
+            return Objects.requireNonNull(res.body()).string();
         } catch (IOException e) {
             return null;
         }
@@ -90,7 +91,7 @@ public class WebRequestUtil {
         Call call = client.newCall(request);//client为请求的客户端
         try {
             Response res = call.execute();
-            return res.body().string();
+            return Objects.requireNonNull(res.body()).string();
         } catch (IOException e) {
             return null;
         }
