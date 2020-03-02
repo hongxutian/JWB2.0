@@ -4,4 +4,18 @@
 <!-- mapper 为根元素节点， 一个namespace对应一个repo -->
 <mapper namespace="com.hnu.repository.ResourceRepository">
 
+    <insert id="insertResources" parameterType="java.util.List">
+        insert into medical_resources_material
+        ( type,count,goods_name,m_id_id)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.type},
+            #{item.count},
+            #{item.goodsName},
+            #{item.mIdId}
+            )
+        </foreach>
+    </insert>
+
 </mapper>

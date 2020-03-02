@@ -1,4 +1,13 @@
 package com.hnu.repository;
 
-public class ResourceRepository {
+import com.hnu.entity.Resource;
+import org.springframework.stereotype.Repository;
+
+
+import java.util.List;
+@Repository
+public interface ResourceRepository {
+
+    void insertResources(List<Resource> resources);
+
 }

@@ -1,6 +1,7 @@
 package com.hnu.utils;
 
 
+import com.alibaba.fastjson.JSONObject;
 import okhttp3.*;
 
 import java.io.IOException;
@@ -51,10 +52,39 @@ public class WebRequestUtil {
         //生成请求的对象
         //先创建builder对象，通过builder对象创建请求对象
         Request.Builder builder = new Request.Builder();
-        builder.post(formBodyBuilder.build());
         builder.url(url);//请求的路径
-        Request request = builder.get().build();//生成请求对象
+        builder.post(formBodyBuilder.build());
+        Request request = builder.build();//生成请求对象
 
+        //发起一次网络请求
+        Call call = client.newCall(request);//client为请求的客户端
+        try {
+            Response res = call.execute();
+            return res.body().string();
+        } catch (IOException e) {
+            return null;
+        }
+    }
+
+    public static String wrPOST_JSON(String url, Map<String, String> parameter, String content) {
+        StringBuffer sb = new StringBuffer();
+        sb.append(url);
+        if (parameter!=null&&!content.isEmpty()) {
+            sb.append("?");
+            for (String key : parameter.keySet()) {
+                sb.append(key + "=" + parameter.get(key) + "&");
+            }
+            sb.deleteCharAt(sb.length() - 1);
+        }
+        url = sb.toString();
+        RequestBody requestBody = FormBody.create(MediaType.parse("application/json; charset=utf-8"),content);
+
+        //生成请求的对象
+        //先创建builder对象，通过builder对象创建请求对象
+        Request.Builder builder = new Request.Builder();
+        builder.url(url);//请求的路径
+        builder.post(requestBody);
+        Request request = builder.build();//生成请求对象
 
         //发起一次网络请求
         Call call = client.newCall(request);//client为请求的客户端

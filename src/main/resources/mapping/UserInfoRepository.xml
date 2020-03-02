@@ -4,4 +4,12 @@
 <!-- mapper 为根元素节点， 一个namespace对应一个repo -->
 <mapper namespace="com.hnu.repository.UserInfoRepository">
 
+    <select id="searchStores" resultType="com.hnu.entity.UserInfo">
+        select * from medical_resources_userinfo  where store_name like #{keyword} limit #{current_position},#{page_items_count}
+    </select>
+
+    <select id="selectUserInfo" parameterType="long" resultType="com.hnu.entity.UserInfo">
+        select * from medical_resources_userinfo where id = #{id}
+    </select>
+
 </mapper>
