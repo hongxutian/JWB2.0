@@ -2,27 +2,10 @@ package com.hnu.entity;
 
 public class Material {
 
-    private int id;
-    private int mId;
     private int type;
+    private float count;
     private String goodsName;
-    private String count;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getmId() {
-        return mId;
-    }
-
-    public void setmId(int mId) {
-        this.mId = mId;
-    }
+    private int m_id_id;
 
     public int getType() {
         return type;
@@ -30,6 +13,14 @@ public class Material {
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    public float getCount() {
+        return count;
+    }
+
+    public void setCount(float count) {
+        this.count = count;
     }
 
     public String getGoodsName() {
@@ -40,11 +31,11 @@ public class Material {
         this.goodsName = goodsName;
     }
 
-    public String getCount() {
-        return count;
+    public int getM_id_id() {
+        return m_id_id;
     }
 
-    public void setCount(String count) {
-        this.count = count;
+    public void setM_id_id(int m_id_id) {
+        this.m_id_id = m_id_id;
     }
 }
