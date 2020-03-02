@@ -5,22 +5,15 @@
     <option name="CUSTOM_SCOPE_NAME" value="Module 'jwb20'" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb8ba3b-d7e9-41ce-bf53-8ed5f7e166c7" name="Default Changelist" comment="">
+    <list default="true" id="5eb8ba3b-d7e9-41ce-bf53-8ed5f7e166c7" name="Default Changelist" comment="修改实体类，和数据库字段一致">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/hnu/controller/HomeController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/hnu/entity/Limit.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/hnu/entity/NewJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnu/entity/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hnu/entity/Material.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnu/entity/Suppdema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hnu/entity/Demand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnu/entity/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hnu/entity/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnu/repository/ResourceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hnu/repository/MaterialRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnu/repository/SuppdemaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hnu/repository/DemandRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/ResourceRepository.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/SuppdemaRepository.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hnu/entity/Resource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hnu/entity/Suppdema.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hnu/repository/ResourceRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hnu/repository/SuppdemaRepository.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hnu/repository/DemandRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hnu/repository/MaterialRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnu/repository/ResourceRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnu/repository/SuppdemaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hnu/entity/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hnu/entity/UserInfo.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -477,7 +470,7 @@
       <updated>1582951432440</updated>
       <workItem from="1582951435118" duration="412000" />
       <workItem from="1582967268860" duration="2796000" />
-      <workItem from="1583104951831" duration="13276000" />
+      <workItem from="1583104951831" duration="13524000" />
     </task>
     <task id="LOCAL-00001" summary="添加mybatis依赖，配置数据源">
       <created>1582967710663</created>
@@ -521,15 +514,28 @@
       <option name="project" value="LOCAL" />
       <updated>1583076892098</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="修改实体类，和数据库字段一致">
+      <created>1583138746465</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1583138746465</updated>
+    </task>
+    <task id="LOCAL-00008" summary="修改实体类，和数据库字段一致">
+      <created>1583138787528</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1583138787528</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22913000" />
+    <option name="totallyTimeSpent" value="23161000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="13" y="59" width="1400" height="771" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2569956" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -542,7 +548,7 @@
       <window_info anchor="bottom" id="Inspection Results" weight="0.3298969" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3298969" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" visible="true" weight="0.3298969" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -550,7 +556,7 @@
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.50073636" side_tool="true" visible="true" weight="0.3298969" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3298969" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
@@ -575,7 +581,8 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/hnu-JWB/JWB2.0&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="修改secret" />
     <MESSAGE value="添加注册功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加注册功能" />
+    <MESSAGE value="修改实体类，和数据库字段一致" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改实体类，和数据库字段一致" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
