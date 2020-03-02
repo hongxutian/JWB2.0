@@ -7,6 +7,7 @@ import java.util.Date;
 
 public class Demand {
 
+    int id;
     @JsonAlias(value = "u_id")
     private int uId;
     @JsonAlias(value = "s_lon")
@@ -39,6 +40,14 @@ public class Demand {
     private String storeName;
     @JsonAlias(value = "u_id_id")
     private int uIdId; //外键链接的对象
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getuId() {
         return uId;

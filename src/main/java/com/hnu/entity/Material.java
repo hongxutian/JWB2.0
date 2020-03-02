@@ -12,10 +12,13 @@ public class Material {
         return type;
 
     }
-    /**  */
-    public void setCount(float count){
-        this.count = count;
+
+    public void setType(int type) {
+        this.type = type;
     }
+
+    /**  */
+
 
 
     public float getCount() {

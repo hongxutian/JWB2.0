@@ -3,9 +3,9 @@ package com.hnu.server;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.hnu.entity.Suppdema;
+import com.hnu.entity.Demand;
 import com.hnu.entity.UserInfo;
-import com.hnu.repository.SuppdemaRepository;
+import com.hnu.repository.DemandRepository;
 import com.hnu.repository.UserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import java.util.List;
 public class SearchService {
 
     @Autowired
-    SuppdemaRepository suppdemaRepository = null;
+    DemandRepository demandRepository = null;
 
     @Autowired
     UserInfoRepository userInfoRepository = null;
@@ -31,26 +31,42 @@ public class SearchService {
     public String searchStores(String keyword,int page_items_count,int current_position){
         try {
             keyword = "%"+keyword+"%";
-            List<Suppdema> res = suppdemaRepository.searchStores(keyword,page_items_count,current_position);
+            List<Demand> res = demandRepository.searchStores(keyword,page_items_count,current_position);
             JSONArray array = new JSONArray();
             for(int i=0;i<res.size();i++){
-                Suppdema suppdema = res.get(i);
-                UserInfo userInfo = userInfoRepository.selectUserInfo(suppdema.getUIdId());
-                JSONObject object = new JSONObject();
-                object.put("s_lon",suppdema.getSLon());
-                object.put("s_lat",suppdema.getSLat());
-                object.put("s_nation",suppdema.getSNation());
-                object.put("s_city",suppdema.getSCity());
-                object.put("s_province",suppdema.getSProvince());
-                object.put("s_street",suppdema.getSStreet());
-                object.put("s_street_number",suppdema.getSStreetNumber());
-                object.put("s_content",suppdema.getSContent());
-                object.put("s_type",suppdema.getSType());
-                object.put("s_range",suppdema.getSRange());
-                object.put("s_aging",suppdema.getSAging());
-                object.put("s_subtime",suppdema.getSSubtime());
-                object.put("store_name",suppdema.getStoreName());
-                object.put("u_id", JSON.toJSON(userInfo));
+                Demand demand = res.get(i);
+                UserInfo userInfo = userInfoRepository.selectUserInfo(demand.getuIdId());
+                JSONObject object = (JSONObject) JSON.toJSON(demand);
+                object.put("s_lon",demand.getsLon());
+                object.put("s_lat",demand.getsLat());
+                object.put("s_nation",demand.getsNation());
+                object.put("s_city",demand.getsCity());
+                object.put("s_province",demand.getsProvince());
+                object.put("s_street",demand.getsStreet());
+                object.put("s_street_number",demand.getsStreetNumber());
+                object.put("s_content",demand.getsContent());
+                object.put("s_type",demand.getsType());
+                object.put("s_range",demand.getsRange());
+                object.put("s_aging",demand.getsAging());
+                object.put("s_subtime",demand.getsSubtime());
+                object.put("store_name",demand.getStoreName());
+                JSONObject child = new JSONObject();
+                child.put("id",userInfo.getId());
+                child.put("u_type",userInfo.getuType());
+                child.put("open_id",userInfo.getOpenId());
+                child.put("nick_name",userInfo.getNickName());
+                child.put("avatar_url",userInfo.getAvatarUrl());
+                child.put("gender",userInfo.getGender());
+                child.put("store_name",userInfo.getStoreName());
+                child.put("m_longitude",userInfo.getmLongitude());
+                child.put("m_latitude",userInfo.getmLatitude());
+                child.put("nation",userInfo.getNation());
+                child.put("city",userInfo.getCity());
+                child.put("province",userInfo.getProvince());
+                child.put("district",userInfo.getDistrict());
+                child.put("street",userInfo.getStreet());
+                child.put("street_number",userInfo.getStreetNumber());
+                object.put("u_id", child);
                 array.add(object);
             }
             return array.toJSONString();

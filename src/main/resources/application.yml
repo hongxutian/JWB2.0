@@ -5,6 +5,7 @@ spring:
     url: jdbc:mysql://121.43.233.66:3306/JWB?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: Hnulab#1234
+
     driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis:
   mapper-locations: classpath:/mapping/*.xml

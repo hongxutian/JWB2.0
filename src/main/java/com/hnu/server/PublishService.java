@@ -1,9 +1,9 @@
 package com.hnu.server;
 
-import com.hnu.entity.Resource;
-import com.hnu.entity.Suppdema;
-import com.hnu.repository.ResourceRepository;
-import com.hnu.repository.SuppdemaRepository;
+import com.hnu.entity.Demand;
+import com.hnu.entity.Material;
+import com.hnu.repository.DemandRepository;
+import com.hnu.repository.MaterialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,19 +14,19 @@ import java.util.List;
 public class PublishService {
 
     @Autowired
-    ResourceRepository resourceRepository;
+    MaterialRepository materialRepository;
 
     @Autowired
-    SuppdemaRepository suppdemaRepository;
+    DemandRepository demandRepository;
 
 
     @Transactional(rollbackFor = Exception.class)
-    public void savePublish(Suppdema suppdema, List<Resource> resources){
-        suppdemaRepository.insetSuppdema(suppdema);
+    public void savePublish(Demand demand, List<Material> resources){
+        demandRepository.insertDemand(demand);
         for (int i=0;i<resources.size();i++){
-            resources.get(i).setMIdId(suppdema.getId());
+            resources.get(i).setM_id_id(demand.getId());
         }
-        resourceRepository.insertResources(resources);
+        materialRepository.insertMaterials(resources);
     }
 
 }

@@ -3,8 +3,8 @@ package com.hnu.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.hnu.entity.Resource;
-import com.hnu.entity.Suppdema;
+import com.hnu.entity.Demand;
+import com.hnu.entity.Material;
 import com.hnu.server.PublishService;
 import com.hnu.utils.WXAPPInfo;
 import com.hnu.utils.WebRequestUtil;
@@ -63,33 +63,33 @@ public class PublishController {
             return back.toJSONString();
         }
         //封装数据
-        Suppdema suppdema = new Suppdema();
-        suppdema.setUIdId(content.getLongValue("u_id"));
-        suppdema.setSLon(content.getBigDecimal("lon"));
-        suppdema.setSLat(content.getBigDecimal("lat"));
-        suppdema.setSNation(content.getString("nation"));
-        suppdema.setSProvince(content.getString("province"));
-        suppdema.setSCity(content.getString("city"));
-        suppdema.setSDistrict(content.getString("district"));
-        suppdema.setSStreet(content.getString("street"));
-        suppdema.setSStreetNumber(content.getString("street_number"));
-        suppdema.setSContent(content.getString("content"));
-        suppdema.setSType(content.getLongValue("type"));
-        suppdema.setSRange(content.getLongValue("range"));
-        suppdema.setSAging(content.getLongValue("aging"));
-        suppdema.setSSubtime(content.getSqlDate("subtime"));
+        Demand demand = new Demand();
+        demand.setuIdId(content.getIntValue("u_id"));
+        demand.setsLon(content.getBigDecimal("lon"));
+        demand.setsLat(content.getBigDecimal("lat"));
+        demand.setsNation(content.getString("nation"));
+        demand.setsProvince(content.getString("province"));
+        demand.setsCity(content.getString("city"));
+        demand.setsDistrict(content.getString("district"));
+        demand.setsStreet(content.getString("street"));
+        demand.setsStreetNumber(content.getString("street_number"));
+        demand.setsContent(content.getString("content"));
+        demand.setsType(content.getIntValue("type"));
+        demand.setsRange(content.getIntValue("range"));
+        demand.setsAging(content.getIntValue("aging"));
+        demand.setsSubtime(content.getSqlDate("subtime"));
         if(content.getString("store_name")==null){
-            suppdema.setStoreName("");
+            demand.setStoreName("");
         }else {
-            suppdema.setStoreName(content.getString("store_name"));
+            demand.setStoreName(content.getString("store_name"));
         }
 
 
         JSONArray array = content.getJSONArray("goods");
-        List<Resource> resources = new ArrayList<>();
+        List<Material> resources = new ArrayList<>();
         for(int i=0;i<array.size();i++){
             JSONObject temp = array.getJSONObject(i);
-            Resource resource = new Resource();
+            Material resource = new Material();
             resource.setGoodsName(temp.getString("goods_name"));
             resource.setCount(temp.getFloat("num_or_price"));
             resource.setType(i);
@@ -97,7 +97,7 @@ public class PublishController {
         }
         //存储数据
         try {
-            publishServer.savePublish(suppdema,resources);
+            publishServer.savePublish(demand,resources);
             back.put("msg","操作成功！");
             back.put("status_code","201");
             return back.toJSONString();
