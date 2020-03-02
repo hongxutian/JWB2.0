@@ -1,6 +1,6 @@
 package com.hnu.entity;
 
-public class Resource {
+public class Material {
 
     private int id;
     private int mId;

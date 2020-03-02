@@ -144,4 +144,24 @@ public class UserInfo {
     public void setmLatitude(BigDecimal mLatitude) {
         this.mLatitude = mLatitude;
     }
+
+    @Override
+    public String toString() {
+        return "UserInfo{" +
+                "uType=" + uType +
+                ", openId='" + openId + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", gender='" + gender + '\'' +
+                ", nation='" + nation + '\'' +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", district='" + district + '\'' +
+                ", street='" + street + '\'' +
+                ", streetNumber='" + streetNumber + '\'' +
+                ", storeName='" + storeName + '\'' +
+                ", mLongitude=" + mLongitude +
+                ", mLatitude=" + mLatitude +
+                '}';
+    }
 }
