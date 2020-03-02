@@ -2,49 +2,54 @@ package com.hnu.entity;
 
 public class Resource {
 
-    private int id;
-    private int mId;
-    private int type;
-    private String goodsName;
-    private String count;
+    private long id ;
+    /**  */
+    private long type ;
+    /**  */
+    private float count ;
+    /**  */
+    private String goodsName ;
+    /**  */
+    private long mIdId ;
 
-    public int getId() {
-        return id;
+    /**  */
+    public long getId(){
+        return this.id;
     }
-
-    public void setId(int id) {
+    /**  */
+    public void setId(long id){
         this.id = id;
     }
-
-    public int getmId() {
-        return mId;
+    /**  */
+    public long getType(){
+        return this.type;
     }
-
-    public void setmId(int mId) {
-        this.mId = mId;
-    }
-
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
+    /**  */
+    public void setType(long type){
         this.type = type;
     }
-
-    public String getGoodsName() {
-        return goodsName;
+    /**  */
+    public float getCount(){
+        return this.count;
     }
-
-    public void setGoodsName(String goodsName) {
+    /**  */
+    public void setCount(float count){
+        this.count = count;
+    }
+    /**  */
+    public String getGoodsName(){
+        return this.goodsName;
+    }
+    /**  */
+    public void setGoodsName(String goodsName){
         this.goodsName = goodsName;
     }
-
-    public String getCount() {
-        return count;
+    /**  */
+    public long getMIdId(){
+        return this.mIdId;
     }
-
-    public void setCount(String count) {
-        this.count = count;
+    /**  */
+    public void setMIdId(long mIdId){
+        this.mIdId = mIdId;
     }
 }

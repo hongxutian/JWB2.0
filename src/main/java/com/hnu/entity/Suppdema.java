@@ -1,149 +1,168 @@
 package com.hnu.entity;
 
+import java.math.BigDecimal;
+import java.sql.Date;
+
 public class Suppdema {
 
-    private int id;
-    private int uId;
-    private float lon;
-    private float lat;
-    private String content;
-    private int type;
-    private int range;
-    private int aging;
-    private int subtime;
-    private String nation;
-    private String province;
-    private String city;
-    private String district;
-    private String street;
-    private String streetNumber;
-    private String storeName;
+    private long id ;
+    /**  */
+    private BigDecimal sLon ;
+    /**  */
+    private BigDecimal sLat ;
+    /**  */
+    private String sNation ;
+    /**  */
+    private String sCity ;
+    /**  */
+    private String sProvince ;
+    /**  */
+    private String sDistrict ;
+    /**  */
+    private String sStreet ;
+    /**  */
+    private String sStreetNumber ;
+    /**  */
+    private String sContent ;
+    /**  */
+    private long sType ;
+    /**  */
+    private long sRange ;
+    /**  */
+    private long sAging ;
+    /**  */
+    private Date sSubtime ;
+    /**  */
+    private String storeName ;
+    /**  */
+    private long uIdId ;
 
-    public int getId() {
-        return id;
+    /**  */
+    public long getId(){
+        return this.id;
     }
-
-    public void setId(int id) {
+    /**  */
+    public void setId(long id){
         this.id = id;
     }
-
-    public int getuId() {
-        return uId;
+    /**  */
+    public BigDecimal getSLon(){
+        return this.sLon;
     }
-
-    public void setuId(int uId) {
-        this.uId = uId;
+    /**  */
+    public void setSLon(BigDecimal sLon){
+        this.sLon = sLon;
     }
-
-    public float getLon() {
-        return lon;
+    /**  */
+    public BigDecimal getSLat(){
+        return this.sLat;
     }
-
-    public void setLon(float lon) {
-        this.lon = lon;
+    /**  */
+    public void setSLat(BigDecimal sLat){
+        this.sLat = sLat;
     }
-
-    public float getLat() {
-        return lat;
+    /**  */
+    public String getSNation(){
+        return this.sNation;
     }
-
-    public void setLat(float lat) {
-        this.lat = lat;
+    /**  */
+    public void setSNation(String sNation){
+        this.sNation = sNation;
     }
-
-    public String getContent() {
-        return content;
+    /**  */
+    public String getSCity(){
+        return this.sCity;
     }
-
-    public void setContent(String content) {
-        this.content = content;
+    /**  */
+    public void setSCity(String sCity){
+        this.sCity = sCity;
     }
-
-    public int getType() {
-        return type;
+    /**  */
+    public String getSProvince(){
+        return this.sProvince;
     }
-
-    public void setType(int type) {
-        this.type = type;
+    /**  */
+    public void setSProvince(String sProvince){
+        this.sProvince = sProvince;
     }
-
-    public int getRange() {
-        return range;
+    /**  */
+    public String getSDistrict(){
+        return this.sDistrict;
     }
-
-    public void setRange(int range) {
-        this.range = range;
+    /**  */
+    public void setSDistrict(String sDistrict){
+        this.sDistrict = sDistrict;
     }
-
-    public int getAging() {
-        return aging;
+    /**  */
+    public String getSStreet(){
+        return this.sStreet;
     }
-
-    public void setAging(int aging) {
-        this.aging = aging;
+    /**  */
+    public void setSStreet(String sStreet){
+        this.sStreet = sStreet;
     }
-
-    public int getSubtime() {
-        return subtime;
+    /**  */
+    public String getSStreetNumber(){
+        return this.sStreetNumber;
     }
-
-    public void setSubtime(int subtime) {
-        this.subtime = subtime;
+    /**  */
+    public void setSStreetNumber(String sStreetNumber){
+        this.sStreetNumber = sStreetNumber;
     }
-
-    public String getNation() {
-        return nation;
+    /**  */
+    public String getSContent(){
+        return this.sContent;
     }
-
-    public void setNation(String nation) {
-        this.nation = nation;
+    /**  */
+    public void setSContent(String sContent){
+        this.sContent = sContent;
     }
-
-    public String getProvince() {
-        return province;
+    /**  */
+    public long getSType(){
+        return this.sType;
     }
-
-    public void setProvince(String province) {
-        this.province = province;
+    /**  */
+    public void setSType(long sType){
+        this.sType = sType;
     }
-
-    public String getCity() {
-        return city;
+    /**  */
+    public long getSRange(){
+        return this.sRange;
     }
-
-    public void setCity(String city) {
-        this.city = city;
+    /**  */
+    public void setSRange(long sRange){
+        this.sRange = sRange;
     }
-
-    public String getDistrict() {
-        return district;
+    /**  */
+    public long getSAging(){
+        return this.sAging;
     }
-
-    public void setDistrict(String district) {
-        this.district = district;
+    /**  */
+    public void setSAging(long sAging){
+        this.sAging = sAging;
     }
-
-    public String getStreet() {
-        return street;
+    /**  */
+    public Date getSSubtime(){
+        return this.sSubtime;
     }
-
-    public void setStreet(String street) {
-        this.street = street;
+    /**  */
+    public void setSSubtime(Date sSubtime){
+        this.sSubtime = sSubtime;
     }
-
-    public String getStreetNumber() {
-        return streetNumber;
+    /**  */
+    public String getStoreName(){
+        return this.storeName;
     }
-
-    public void setStreetNumber(String streetNumber) {
-        this.streetNumber = streetNumber;
-    }
-
-    public String getStoreName() {
-        return storeName;
-    }
-
-    public void setStoreName(String storeName) {
+    /**  */
+    public void setStoreName(String storeName){
         this.storeName = storeName;
+    }
+    /**  */
+    public long getUIdId(){
+        return this.uIdId;
+    }
+    /**  */
+    public void setUIdId(long uIdId){
+        this.uIdId = uIdId;
     }
 }
