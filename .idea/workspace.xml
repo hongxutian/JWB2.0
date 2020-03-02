@@ -5,16 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="Module 'jwb20'" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb8ba3b-d7e9-41ce-bf53-8ed5f7e166c7" name="Default Changelist" comment="修改实体类，和数据库字段一致">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hnu/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hnu/entity/Limit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hnu/entity/NewJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hnu/repository/DemandRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hnu/repository/MaterialRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnu/repository/ResourceRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnu/repository/SuppdemaRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hnu/entity/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hnu/entity/UserInfo.class" afterDir="false" />
-    </list>
+    <list default="true" id="5eb8ba3b-d7e9-41ce-bf53-8ed5f7e166c7" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,7 +48,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="169">
               <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -424,6 +415,9 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
@@ -470,7 +464,7 @@
       <updated>1582951432440</updated>
       <workItem from="1582951435118" duration="412000" />
       <workItem from="1582967268860" duration="2796000" />
-      <workItem from="1583104951831" duration="13524000" />
+      <workItem from="1583104951831" duration="14184000" />
     </task>
     <task id="LOCAL-00001" summary="添加mybatis依赖，配置数据源">
       <created>1582967710663</created>
@@ -528,16 +522,30 @@
       <option name="project" value="LOCAL" />
       <updated>1583138787528</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="添加首页查询接口">
+      <created>1583138890312</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1583138890312</updated>
+    </task>
+    <task id="LOCAL-00010" summary="修改实体类，和数据库字段一致">
+      <created>1583138935347</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1583138935347</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23161000" />
+    <option name="totallyTimeSpent" value="23821000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="13" y="59" width="1400" height="771" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2569956" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2569956" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -548,7 +556,7 @@
       <window_info anchor="bottom" id="Inspection Results" weight="0.3298969" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" visible="true" weight="0.3298969" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" weight="0.3298969" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -556,11 +564,11 @@
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.50073636" side_tool="true" visible="true" weight="0.3298969" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50073636" side_tool="true" visible="true" weight="0.3298969" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3298969" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.3298969" />
+      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.4992636" visible="true" weight="0.3298969" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -581,6 +589,7 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/hnu-JWB/JWB2.0&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="修改secret" />
     <MESSAGE value="添加注册功能" />
+    <MESSAGE value="添加首页查询接口" />
     <MESSAGE value="修改实体类，和数据库字段一致" />
     <option name="LAST_COMMIT_MESSAGE" value="修改实体类，和数据库字段一致" />
   </component>
@@ -924,7 +933,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="169">
           <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />

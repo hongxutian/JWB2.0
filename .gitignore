@@ -13,4 +13,4 @@ src/main/webapp/index.jsp
 src/main/webapp/WEB-INF/web.xml
 target/classes/com/hnu/controller/HelloController.class
 target/classes/com/hnu/JWBApplication.class
-*.xml
+
