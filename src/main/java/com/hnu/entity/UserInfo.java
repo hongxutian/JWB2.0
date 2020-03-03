@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 
 public class UserInfo {
 
+    private int id;
     @JsonAlias(value = "u_type")
     private int uType;
     @JsonAlias(value = "open_id")
@@ -28,6 +29,14 @@ public class UserInfo {
     private BigDecimal mLongitude;
     @JsonAlias(value = "m_latitude")
     private BigDecimal mLatitude;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getuType() {
         return uType;

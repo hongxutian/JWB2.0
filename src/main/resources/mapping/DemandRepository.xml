@@ -28,4 +28,25 @@
        and d.s_lon &gt;= #{minLon} and d.s_lat &lt;= #{maxLat} and d.s_lat &gt;= #{minLat} and d.s_subtime &gt;= #{startTime} and d.s_subtime &lt;= #{endTime}
     </select>
 
+    <insert id="insertDemand" parameterType="com.hnu.entity.Demand" useGeneratedKeys="true" keyProperty="id">
+
+        insert into medical_resources_demand(s_lon,s_lat,s_nation,s_city,s_province,s_district,
+        s_street,s_street_number,s_content,s_type,s_range,s_aging,s_subtime,store_name,u_id_id)
+        values (
+        #{sLon},#{sLat},#{sNation},#{sCity},#{sProvince},#{sDistrict},#{sStreet},#{sStreetNumber},#{sContent},#{sType},
+        #{sRange},#{sAging},#{sSubtime},#{storeName},#{uIdId}
+        )
+
+    </insert>
+
+    <select id="searchStores" resultType="demand">
+        select
+        s_lon as sLon,s_lat as sLat, s_nation as sNation, s_city as sCity, s_province as sProvince,
+        s_district as sDistrict, s_street as sStreet, s_street_number as sStreetNumber,
+        s_content as sContent, s_type as sType, s_range as sRange, s_aging as sAging,
+        s_subtime as sSubtime, store_name as storeName, u_id_id as uIdId
+        from medical_resources_demand
+        where s_type='1' and store_name like #{keyword} limit #{current_position},#{page_items_count};
+    </select>
+
 </mapper>
