@@ -1,4 +1,4 @@
-package com.hnu.entity;
+package com.hnu.entity.newest;
 
 import java.util.Date;
 

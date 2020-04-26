@@ -5,7 +5,7 @@
 <mapper namespace="com.hnu.repository.DemandRepository">
 
 <!--  查询语句  -->
-    <select id="findByRange" parameterType="com.hnu.entity.Limit" resultType="com.hnu.entity.Demand">
+    <select id="findByRange" parameterType="com.hnu.entity.newest.Limit" resultType="com.hnu.entity.Demand">
        select * from medical_resources_demand d where d.s_lon &lt;= #{maxLon}
        and d.s_lon &gt;= #{minLon} and d.s_lat &lt;= #{maxLat} and d.s_lat &gt;= #{minLat}
        and d.s_subtime &gt;= #{startTime} and d.s_subtime &lt;= #{endTime}
@@ -20,7 +20,7 @@
         values (
         #{sLon},#{sLat},#{sNation},#{sCity},#{sProvince},#{sDistrict},#{sStreet},#{sStreetNumber},#{sContent},#{sType},
         #{sRange},#{sAging},#{sSubtime},#{storeName},#{uIdId}
-        )
+        );
 
     </insert>
 

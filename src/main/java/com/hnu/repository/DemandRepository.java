@@ -1,7 +1,7 @@
 package com.hnu.repository;
 
 import com.hnu.entity.Demand;
-import com.hnu.entity.Limit;
+import com.hnu.entity.newest.Limit;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

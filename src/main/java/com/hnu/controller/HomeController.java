@@ -1,7 +1,7 @@
 package com.hnu.controller;
 
 import com.hnu.entity.Demand;
-import com.hnu.entity.Limit;
+import com.hnu.entity.newest.Limit;
 import com.hnu.entity.Material;
 import com.hnu.entity.me.MeJson;
 import com.hnu.entity.newest.NewJson;

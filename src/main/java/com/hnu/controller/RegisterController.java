@@ -1,8 +1,7 @@
 package com.hnu.controller;
 
-import com.hnu.entity.UserInfo;
+import com.hnu.entity.user.UserInfo;
 import com.hnu.repository.UserInfoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +18,7 @@ public class RegisterController {
     @PostMapping("/UserRegister")
     public String register(@RequestBody UserInfo userInfo) {
         //利用open_id验证用户是否注册过
-        if (userInfoRepository.findByOpenId(userInfo.getOpenId()) != null) {
+        if (userInfoRepository.findByOpenId(userInfo.getOpen_id()) != null) {
             System.out.println("用户已注册");
             return "{\"msg\": \"UserRegistered\"}";
         }else {
