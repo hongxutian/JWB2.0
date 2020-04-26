@@ -14,10 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 public class PublishController {
@@ -81,13 +78,15 @@ public class PublishController {
             demand.setsSubtime(format.parse(content.getSubtime()));
         } catch (ParseException e) {
             e.printStackTrace();
+            demand.setsSubtime(new Date());
         }
         demand.setStoreName(content.getStore_name());
 
 
         List<PublishJson.GoodsBean> goods = content.getGoods();
-        List<Material> resources = new ArrayList<>();
-        if (goods != null) {
+        List<Material> resources = null;
+        if (goods != null && goods.size()>0) {
+            resources = new ArrayList<>();
             for (PublishJson.GoodsBean good : goods) {
                 Material resource = new Material();
                 resource.setType(content.getType());
@@ -98,9 +97,7 @@ public class PublishController {
         }
         //存储数据
         try {
-            System.out.println("before");
             publishServer.savePublish(demand, resources);
-            System.out.println("after");
             back.put("msg", "操作成功！");
             back.put("status_code", "201");
             return back.toJSONString();

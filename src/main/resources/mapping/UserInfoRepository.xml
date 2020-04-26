@@ -13,11 +13,9 @@
         values(#{u_type}, #{open_id}, #{nick_name}, #{avatar_url}, #{gender}, #{store_name}, #{m_longitude}, #{m_latitude}, #{nation}, #{city}, #{province}, #{district}, #{street}, #{street_number} )
     </insert>
 
-    <select id="selectUserInfo" resultType="com.hnu.entity.user.UserInfo">
+    <select id="selectUserInfo" resultType="com.hnu.entity.SearUserInforBean">
         select
-        u_type as uType, open_id as openId, nick_name as nickName, avatar_url as avatarUrl,
-        gender, nation, province, city, district, street, street_number as streetNumber,
-        store_name as storeName, m_longitude as mLongitude, m_latitude as mLatitude
+        *
         from medical_resources_userinfo where id = #{id}
     </select>
 
