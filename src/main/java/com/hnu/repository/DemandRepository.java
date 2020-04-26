@@ -3,9 +3,11 @@ package com.hnu.repository;
 import com.hnu.entity.Demand;
 import com.hnu.entity.Limit;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface DemandRepository {
 
     List<Demand> findByRange(Limit limit);

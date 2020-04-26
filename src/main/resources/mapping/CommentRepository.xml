@@ -4,4 +4,8 @@
 <!-- mapper 为根元素节点， 一个namespace对应一个repo -->
 <mapper namespace="com.hnu.repository.CommentRepository">
 
+    <select id="getComments" resultType="com.hnu.entity.Comment">
+        select * from medical_resources_comment where source_id = #{sourceId}
+    </select>
+
 </mapper>

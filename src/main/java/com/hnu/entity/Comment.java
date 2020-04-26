@@ -1,59 +1,98 @@
 package com.hnu.entity;
 
+import java.sql.Timestamp;
+
 public class Comment {
 
-    private int id;
-    private int sdId;
-    private int uId;
-    private int touId;
-    private String content;
-    private long time;
+    private Integer id;
+    private Integer userId;
+    private Integer replyCommentId;
+    private String comment;
+    private Timestamp insertTime;
+    private long sourceId;
+    private String username;
+    private String replyUserName;
+    private String userPhoto;
 
-    public int getId() {
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getSdId() {
-        return sdId;
+
+    public long getUserId() {
+        return userId;
     }
 
-    public void setSdId(int sdId) {
-        this.sdId = sdId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public int getuId() {
-        return uId;
+
+    public long getReplyCommentId() {
+        return replyCommentId;
     }
 
-    public void setuId(int uId) {
-        this.uId = uId;
+    public void setReplyCommentId(Integer replyCommentId) {
+        this.replyCommentId = replyCommentId;
     }
 
-    public int getTouId() {
-        return touId;
+
+    public String getComment() {
+        return comment;
     }
 
-    public void setTouId(int touId) {
-        this.touId = touId;
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
-    public String getContent() {
-        return content;
+
+    public java.sql.Timestamp getInsertTime() {
+        return insertTime;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setInsertTime(java.sql.Timestamp insertTime) {
+        this.insertTime = insertTime;
     }
 
-    public long getTime() {
-        return time;
+
+    public long getSourceId() {
+        return sourceId;
     }
 
-    public void setTime(long time) {
-        this.time = time;
+    public void setSourceId(long sourceId) {
+        this.sourceId = sourceId;
     }
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+
+    public String getReplyUserName() {
+        return replyUserName;
+    }
+
+    public void setReplyUserName(String replyUserName) {
+        this.replyUserName = replyUserName;
+    }
+
+
+    public String getUserPhoto() {
+        return userPhoto;
+    }
+
+    public void setUserPhoto(String userPhoto) {
+        this.userPhoto = userPhoto;
+    }
+
 }

@@ -4,28 +4,13 @@
 <!-- mapper 为根元素节点， 一个namespace对应一个repo -->
 <mapper namespace="com.hnu.repository.DemandRepository">
 
-    <resultMap id="demand" type="com.hnu.entity.Demand">
-        <result column="s_lon" property="sLon"/>
-        <result column="s_lat" property="sLat"/>
-        <result column="s_nation" property="sNation"/>
-        <result column="s_city" property="sCity"/>
-        <result column="s_province" property="sProvince"/>
-        <result column="s_district" property="sDistrict"/>
-        <result column="s_street" property="sStreet"/>
-        <result column="s_street_number" property="sStreetNumber"/>
-        <result column="s_content" property="sContent"/>
-        <result column="s_type" property="sType"/>
-        <result column="s_range" property="sRange"/>
-        <result column="s_aging" property="sAging"/>
-        <result column="s_subtime" property="sSubtime"/>
-        <result column="store_name" property="storeName"/>
-        <result column="u_id_id" property="uIdId"/>
-    </resultMap>
-
 <!--  查询语句  -->
-    <select id="findByRange" parameterType="com.hnu.entity.Limit" resultMap="demand">
+    <select id="findByRange" parameterType="com.hnu.entity.Limit" resultType="com.hnu.entity.Demand">
        select * from medical_resources_demand d where d.s_lon &lt;= #{maxLon}
-       and d.s_lon &gt;= #{minLon} and d.s_lat &lt;= #{maxLat} and d.s_lat &gt;= #{minLat} and d.s_subtime &gt;= #{startTime} and d.s_subtime &lt;= #{endTime}
+       and d.s_lon &gt;= #{minLon} and d.s_lat &lt;= #{maxLat} and d.s_lat &gt;= #{minLat}
+       and d.s_subtime &gt;= #{startTime} and d.s_subtime &lt;= #{endTime}
+       limit #{start},#{limit};
+
     </select>
 
     <insert id="insertDemand" parameterType="com.hnu.entity.Demand" useGeneratedKeys="true" keyProperty="id">
@@ -39,12 +24,9 @@
 
     </insert>
 
-    <select id="searchStores" resultType="demand">
+    <select id="searchStores" resultType="com.hnu.entity.Demand">
         select
-        s_lon as sLon,s_lat as sLat, s_nation as sNation, s_city as sCity, s_province as sProvince,
-        s_district as sDistrict, s_street as sStreet, s_street_number as sStreetNumber,
-        s_content as sContent, s_type as sType, s_range as sRange, s_aging as sAging,
-        s_subtime as sSubtime, store_name as storeName, u_id_id as uIdId
+        *
         from medical_resources_demand
         where s_type='1' and store_name like #{keyword} limit #{current_position},#{page_items_count};
     </select>

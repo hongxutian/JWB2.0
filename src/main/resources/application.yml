@@ -10,6 +10,8 @@ spring:
 mybatis:
   mapper-locations: classpath:/mapping/*.xml
   type-aliases-package: com.hnu.entity
+  configuration:
+    map-underscore-to-camel-case: true
 
 server:
   port: 7760

@@ -10,31 +10,31 @@ public class Demand {
     int id;
     @JsonAlias(value = "u_id")
     private int uId;
-    @JsonAlias(value = "s_lon")
+    @JsonAlias(value = "lon")
     private BigDecimal sLon;
-    @JsonAlias(value = "s_lat")
+    @JsonAlias(value = "lat")
     private BigDecimal sLat;
-    @JsonAlias(value = "s_nation")
+    @JsonAlias(value = "nation")
     private String sNation;
-    @JsonAlias(value = "s_city")
+    @JsonAlias(value = "city")
     private String sCity;
-    @JsonAlias(value = "s_province")
+    @JsonAlias(value = "province")
     private String sProvince;
-    @JsonAlias(value = "s_district")
+    @JsonAlias(value = "district")
     private String sDistrict;
-    @JsonAlias(value = "s_street")
+    @JsonAlias(value = "street")
     private String sStreet;
-    @JsonAlias(value = "s_street_number")
+    @JsonAlias(value = "street_number")
     private String sStreetNumber;
-    @JsonAlias(value = "s_content")
+    @JsonAlias(value = "content")
     private String sContent;
-    @JsonAlias(value = "s_type")
+    @JsonAlias(value = "type")
     private int sType;
-    @JsonAlias(value = "s_range")
+    @JsonAlias(value = "range")
     private int sRange;
-    @JsonAlias(value = "s_aging")
+    @JsonAlias(value = "aging")
     private int sAging;
-    @JsonAlias(value = "s_subtime")
+    @JsonAlias(value = "subtime")
     private Date sSubtime;
     @JsonAlias(value = "store_name")
     private String storeName;
