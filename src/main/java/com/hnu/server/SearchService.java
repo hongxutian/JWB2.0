@@ -1,17 +1,14 @@
 package com.hnu.server;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.hnu.entity.Demand;
 import com.hnu.entity.SearUserInforBean;
 import com.hnu.entity.SearchBean;
-import com.hnu.entity.user.UserInfo;
 import com.hnu.repository.DemandRepository;
 import com.hnu.repository.UserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -59,20 +56,20 @@ public class SearchService {
 
                 SearchBean.UIdBean uIdBean = new SearchBean.UIdBean();
                 uIdBean.setId(userInfo.getId());
-                uIdBean.setU_type(userInfo.getU_type());
-                uIdBean.setOpen_id(userInfo.getOpen_id());
-                uIdBean.setNick_name(userInfo.getNick_name());
-                uIdBean.setAvatar_url(userInfo.getAvatar_url());
+                uIdBean.setU_type(userInfo.getUType());
+                uIdBean.setOpen_id(userInfo.getOpenId());
+                uIdBean.setNick_name(userInfo.getNickName());
+                uIdBean.setAvatar_url(userInfo.getAvatarUrl());
                 uIdBean.setGender(userInfo.getGender());
-                uIdBean.setStore_name(userInfo.getStore_name());
-                uIdBean.setM_longitude(userInfo.getM_longitude());
-                uIdBean.setM_latitude(userInfo.getM_latitude());
+                uIdBean.setStore_name(userInfo.getStoreName());
+                uIdBean.setM_longitude(userInfo.getMLongitude());
+                uIdBean.setM_latitude(userInfo.getMLatitude());
                 uIdBean.setNation(userInfo.getNation());
                 uIdBean.setCity(userInfo.getCity());
                 uIdBean.setProvince(userInfo.getProvince());
                 uIdBean.setDistrict(userInfo.getDistrict());
                 uIdBean.setStreet(userInfo.getStreet());
-                uIdBean.setStreet_number(userInfo.getStreet_number());
+                uIdBean.setStreet_number(userInfo.getStreetNumber());
                 searchBean.setU_id(uIdBean);
 
                 r.add(searchBean);

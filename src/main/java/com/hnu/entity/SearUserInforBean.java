@@ -1,142 +1,159 @@
 package com.hnu.entity;
 
+
 import java.math.BigDecimal;
+
 
 public class SearUserInforBean {
 
-    private long id;
-    private int u_type;
-    private String open_id;
-    private String nick_name;
-    private String avatar_url;
-    private String gender;
-    private String store_name;
-    private BigDecimal m_longitude;
-    private BigDecimal m_latitude;
-    private String nation;
-    private String city;
-    private String province;
-    private String district;
-    private String street;
-    private String street_number;
+    private long id ;
+    /**  */
+    private int uType ;
+    /**  */
+    private String openId ;
+    /**  */
+    private String nickName ;
+    /**  */
+    private String avatarUrl ;
+    /**  */
+    private String gender ;
+    /**  */
+    private String storeName ;
+    /**  */
+    private BigDecimal mLongitude ;
+    /**  */
+    private BigDecimal mLatitude ;
+    /**  */
+    private String nation ;
+    /**  */
+    private String city ;
+    /**  */
+    private String province ;
+    /**  */
+    private String district ;
+    /**  */
+    private String street ;
+    /**  */
+    private String streetNumber ;
 
-    public long getId() {
-        return id;
+    /**  */
+    public long getId(){
+        return this.id;
     }
-
-    public void setId(long id) {
+    /**  */
+    public void setId(long id){
         this.id = id;
     }
-
-    public int getU_type() {
-        return u_type;
+    /**  */
+    public int getUType(){
+        return this.uType;
     }
-
-    public void setU_type(int u_type) {
-        this.u_type = u_type;
+    /**  */
+    public void setUType(int uType){
+        this.uType = uType;
     }
-
-    public String getOpen_id() {
-        return open_id;
+    /**  */
+    public String getOpenId(){
+        return this.openId;
     }
-
-    public void setOpen_id(String open_id) {
-        this.open_id = open_id;
+    /**  */
+    public void setOpenId(String openId){
+        this.openId = openId;
     }
-
-    public String getNick_name() {
-        return nick_name;
+    /**  */
+    public String getNickName(){
+        return this.nickName;
     }
-
-    public void setNick_name(String nick_name) {
-        this.nick_name = nick_name;
+    /**  */
+    public void setNickName(String nickName){
+        this.nickName = nickName;
     }
-
-    public String getAvatar_url() {
-        return avatar_url;
+    /**  */
+    public String getAvatarUrl(){
+        return this.avatarUrl;
     }
-
-    public void setAvatar_url(String avatar_url) {
-        this.avatar_url = avatar_url;
+    /**  */
+    public void setAvatarUrl(String avatarUrl){
+        this.avatarUrl = avatarUrl;
     }
-
-    public String getGender() {
-        return gender;
+    /**  */
+    public String getGender(){
+        return this.gender;
     }
-
-    public void setGender(String gender) {
+    /**  */
+    public void setGender(String gender){
         this.gender = gender;
     }
-
-    public String getStore_name() {
-        return store_name;
+    /**  */
+    public String getStoreName(){
+        return this.storeName;
     }
-
-    public void setStore_name(String store_name) {
-        this.store_name = store_name;
+    /**  */
+    public void setStoreName(String storeName){
+        this.storeName = storeName;
     }
-
-    public BigDecimal getM_longitude() {
-        return m_longitude;
+    /**  */
+    public BigDecimal getMLongitude(){
+        return this.mLongitude;
     }
-
-    public void setM_longitude(BigDecimal m_longitude) {
-        this.m_longitude = m_longitude;
+    /**  */
+    public void setMLongitude(BigDecimal mLongitude){
+        this.mLongitude = mLongitude;
     }
-
-    public BigDecimal getM_latitude() {
-        return m_latitude;
+    /**  */
+    public BigDecimal getMLatitude(){
+        return this.mLatitude;
     }
-
-    public void setM_latitude(BigDecimal m_latitude) {
-        this.m_latitude = m_latitude;
+    /**  */
+    public void setMLatitude(BigDecimal mLatitude){
+        this.mLatitude = mLatitude;
     }
-
-    public String getNation() {
-        return nation;
+    /**  */
+    public String getNation(){
+        return this.nation;
     }
-
-    public void setNation(String nation) {
+    /**  */
+    public void setNation(String nation){
         this.nation = nation;
     }
-
-    public String getCity() {
-        return city;
+    /**  */
+    public String getCity(){
+        return this.city;
     }
-
-    public void setCity(String city) {
+    /**  */
+    public void setCity(String city){
         this.city = city;
     }
-
-    public String getProvince() {
-        return province;
+    /**  */
+    public String getProvince(){
+        return this.province;
     }
-
-    public void setProvince(String province) {
+    /**  */
+    public void setProvince(String province){
         this.province = province;
     }
-
-    public String getDistrict() {
-        return district;
+    /**  */
+    public String getDistrict(){
+        return this.district;
     }
-
-    public void setDistrict(String district) {
+    /**  */
+    public void setDistrict(String district){
         this.district = district;
     }
-
-    public String getStreet() {
-        return street;
+    /**  */
+    public String getStreet(){
+        return this.street;
     }
-
-    public void setStreet(String street) {
+    /**  */
+    public void setStreet(String street){
         this.street = street;
     }
-
-    public String getStreet_number() {
-        return street_number;
+    /**  */
+    public String getStreetNumber(){
+        return this.streetNumber;
     }
-
-    public void setStreet_number(String street_number) {
-        this.street_number = street_number;
+    /**  */
+    public void setStreetNumber(String streetNumber){
+        this.streetNumber = streetNumber;
     }
 }

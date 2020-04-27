@@ -14,9 +14,8 @@
     </insert>
 
     <select id="selectUserInfo" resultType="com.hnu.entity.SearUserInforBean">
-        select
-        *
-        from medical_resources_userinfo where id = #{id}
+        select * from medical_resources_userinfo where id = #{id}
     </select>
+
 
 </mapper>
