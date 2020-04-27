@@ -21,7 +21,7 @@ public class UserInfo {
      */
 
     private int u_type;
-    private int open_id;
+    private String open_id;
     private String nick_name;
     private String avatar_url;
     private String gender;
@@ -43,11 +43,11 @@ public class UserInfo {
         this.u_type = u_type;
     }
 
-    public int getOpen_id() {
+    public String getOpen_id() {
         return open_id;
     }
 
-    public void setOpen_id(int open_id) {
+    public void setOpen_id(String open_id) {
         this.open_id = open_id;
     }
 

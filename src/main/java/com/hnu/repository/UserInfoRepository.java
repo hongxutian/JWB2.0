@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserInfoRepository {
 
-    UserInfo findByOpenId(int openId);
+    UserInfo findByOpenId(String openId);
+
     void save(UserInfo userInfo);
 
     UserInfo selectUserInfo(@Param("id") long id);

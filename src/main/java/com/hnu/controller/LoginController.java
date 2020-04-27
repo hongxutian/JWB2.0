@@ -1,7 +1,15 @@
 package com.hnu.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.hnu.entity.login.LoginRespJson;
+import com.hnu.entity.login.LoginResponseJson;
+import com.hnu.entity.user.UserInfo;
+import com.hnu.repository.UserInfoRepository;
+import com.hnu.utils.JWT;
 import com.hnu.utils.WebRequestUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -12,6 +20,12 @@ public class LoginController {
     private static String appid="wxb038b5f6187b1412";//微信小程序的appid
     private static String secret="a86c4374806324475a28450df4e2f57c";//微信小程序的secret
 
+    private final UserInfoRepository userInfoRepository;
+
+    public LoginController(UserInfoRepository userInfoRepository) {
+        this.userInfoRepository = userInfoRepository;
+    }
+
     /**
      * 用户登录的接口
      * @param js_code 客户端在微信登录时获取的code
@@ -19,46 +33,33 @@ public class LoginController {
      */
     @RequestMapping(value = "/UserLogin",method = RequestMethod.GET,produces="application/json;charset=UTF-8")
     @ResponseBody
-    public String userLogin(@RequestParam("js_code") String js_code){
+    public LoginRespJson userLogin(@RequestParam("js_code") String js_code){
 
         Map<String,String> req = new LinkedHashMap<>();
         req.put("appid",appid);
         req.put("secret",secret);
         req.put("js_code",js_code);
         req.put("grant_type","authorization_code");
-        return WebRequestUtil.wrGET("https://api.weixin.qq.com/sns/jscode2session",req);
-    }
-
-    /**
-     * 获取小程序全局唯一后台接口调用凭据（access_token）。调用绝大多数后台接口时都需使用 access_token
-     * @return 请求成功时，返回一个JSON对象，包含access_token和有效时长（以秒为时间单位）
-     */
-    public static JSONObject getAccessToken(){
-        Map<String,String> req = new LinkedHashMap<>();
-        req.put("grant_type","client_credential");
-        req.put("appid",appid);
-        req.put("secret",secret);
-        String res = WebRequestUtil.wrGET("https://api.weixin.qq.com/cgi-bin/token",req);
-        JSONObject object = isJSON(res);
-        if(object == null){
-            return null;
-        }
-        if(object.containsKey("access_token")){
-            return object;
-        }
-        return null;
-    }
-
-    /**
-     * 判断字符串是否是JSON
-     * @param src 待判断的字符串
-     * @return 是JSON返回一个JSON对象，否则返回null
-     */
-    private static JSONObject isJSON(String src){
-        try {
-            return JSONObject.parseObject(src);
-        }catch (RuntimeException e){
-            return null;
+        String result = WebRequestUtil.wrGET("https://api.weixin.qq.com/sns/jscode2session",req);
+        final LoginResponseJson responseJson = JSON.parseObject(result, LoginResponseJson.class);
+        LoginRespJson respJson = new LoginRespJson();
+        if (responseJson != null && responseJson.getErrcode() == 0) {
+            //登录成功
+            //生成token,有效期30分钟
+            String token = JWT.sign(responseJson.getOpenid(), 60*1000*30);
+            System.out.println(token);
+            final UserInfo userInfo = userInfoRepository.findByOpenId(responseJson.getOpenid());
+            if (userInfo != null) {
+                respJson.setGender(userInfo.getGender());
+                respJson.setOpen_id(userInfo.getOpen_id());
+                respJson.setAvatar_utl(userInfo.getAvatar_url());
+                respJson.setU_type(userInfo.getU_type());
+                respJson.setNick_name(userInfo.getNick_name());
+            }
+            return respJson;
+        }else {
+            //登录失败
+            return respJson;
         }
     }
 

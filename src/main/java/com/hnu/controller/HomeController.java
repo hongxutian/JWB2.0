@@ -1,11 +1,14 @@
 package com.hnu.controller;
 
+import com.hnu.entity.Comment;
 import com.hnu.entity.Demand;
+import com.hnu.entity.newest.CommentInfoBean;
 import com.hnu.entity.newest.Limit;
 import com.hnu.entity.Material;
 import com.hnu.entity.me.MeJson;
 import com.hnu.entity.newest.NewJson;
 import com.hnu.entity.newest.NewResponseJson;
+import com.hnu.repository.CommentRepository;
 import com.hnu.repository.DemandRepository;
 import com.hnu.repository.MaterialRepository;
 import org.springframework.web.bind.annotation.*;
@@ -21,10 +24,12 @@ public class HomeController {
 
     private final DemandRepository demandRepository;
     private final MaterialRepository materialRepository;
+    private final CommentRepository commentRepository;
 
-    public HomeController(DemandRepository demandRepository, MaterialRepository materialRepository) {
+    public HomeController(DemandRepository demandRepository, MaterialRepository materialRepository, CommentRepository commentRepository) {
         this.demandRepository = demandRepository;
         this.materialRepository = materialRepository;
+        this.commentRepository = commentRepository;
     }
 
     @PostMapping("/new/{page}")
@@ -86,31 +91,36 @@ public class HomeController {
         List<NewResponseJson> responseJsonList = new ArrayList<>();
         for (Demand demand : demands) {
             NewResponseJson responseJson = new NewResponseJson();
-            responseJson.setAvatar_url("1");
-            responseJson.setStore_name(demand.getStoreName());
-            responseJson.setS_lon(demand.getsLon());
-            responseJson.setS_lat(demand.getsLat());
-            responseJson.setS_nation(demand.getsNation());
-            responseJson.setS_city(demand.getsCity());
-            responseJson.setS_province(demand.getsProvince());
-            responseJson.setS_street(demand.getsStreet());
-            responseJson.setS_street_number(demand.getsStreetNumber());
-            responseJson.setS_content(demand.getsContent());
-            responseJson.setS_type(demand.getsType());
-            responseJson.setS_range(demand.getsRange());
-            responseJson.setS_aging(demand.getsAging());
-            responseJson.setS_subtime(format.format(demand.getsSubtime()));
+            responseJson.setAvatar_url(demand.getAvatar_url());
+            responseJson.setDemand_id(demand.getDemand_id());
+            responseJson.setNick_name(demand.getNick_name());
+            responseJson.setStore_name(demand.getStore_name());
+            responseJson.setS_lon(demand.getS_lon());
+            responseJson.setS_lat(demand.getS_lat());
+            responseJson.setS_nation(demand.getS_nation());
+            responseJson.setS_city(demand.getS_city());
+            responseJson.setS_province(demand.getS_province());
+            responseJson.setS_street(demand.getS_street());
+            responseJson.setS_street_number(demand.getS_street_number());
+            responseJson.setS_content(demand.getS_content());
+            responseJson.setS_type(demand.getS_type());
+            responseJson.setS_range(demand.getS_range());
+            responseJson.setS_aging(demand.getS_aging());
+            responseJson.setS_subtime(format.format(demand.getS_subtime()));
             // 查找物料详情
-            final List<Material> materialList = materialRepository.findMaterialById(demand.getuIdId());
+            final List<Material> materialList = materialRepository.findMaterialById(demand.getU_id_id());
             List<NewResponseJson.DetailsInfoBean> beans = new ArrayList<>();
             for (Material material : materialList) {
                 NewResponseJson.DetailsInfoBean bean = new NewResponseJson.DetailsInfoBean();
                 bean.setType(material.getType());
-                bean.setGoods_name(material.getGoodsName());
+                bean.setGoods_name(material.getGoods_name());
                 bean.setCount((int) material.getCount());
                 beans.add(bean);
             }
+            // 查询评论信息
+            List<CommentInfoBean> commentList = commentRepository.findCommentsByDemandId(demand.getDemand_id());
             responseJson.setDetails_info(beans);
+            responseJson.setComment_info(commentList);
             responseJsonList.add(responseJson);
         }
         return responseJsonList;

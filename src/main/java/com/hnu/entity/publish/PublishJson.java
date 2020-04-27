@@ -35,6 +35,7 @@ public class PublishJson {
     private String street;
     private String street_number;
     private String content;
+    private String demand_id;
     private int type;
     private int range;
     private int aging;
@@ -120,6 +121,14 @@ public class PublishJson {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getDemand_id() {
+        return demand_id;
+    }
+
+    public void setDemand_id(String demand_id) {
+        this.demand_id = demand_id;
     }
 
     public int getType() {

@@ -6,6 +6,7 @@ import java.util.List;
 public class NewResponseJson {
 
     /**
+     * nick_name : tom
      * avatar_url : 1
      * store_name : 口罩
      * s_lon : 12.1
@@ -23,6 +24,8 @@ public class NewResponseJson {
      * details_info : [{"type":0,"count":100,"goods_name":"口罩"},{"type":1,"count":100,"goods_name":"口罩"}]
      */
 
+    private String demand_id;
+    private String nick_name;
     private String avatar_url;
     private String store_name;
     private BigDecimal s_lon;
@@ -37,7 +40,26 @@ public class NewResponseJson {
     private int s_range;
     private int s_aging;
     private String s_subtime;
+
     private List<DetailsInfoBean> details_info;
+
+    private List<CommentInfoBean> comment_info;
+
+    public String getDemand_id() {
+        return demand_id;
+    }
+
+    public void setDemand_id(String demand_id) {
+        this.demand_id = demand_id;
+    }
+
+    public String getNick_name() {
+        return nick_name;
+    }
+
+    public void setNick_name(String nick_name) {
+        this.nick_name = nick_name;
+    }
 
     public String getAvatar_url() {
         return avatar_url;
@@ -159,6 +181,14 @@ public class NewResponseJson {
         this.details_info = details_info;
     }
 
+    public List<CommentInfoBean> getComment_info() {
+        return comment_info;
+    }
+
+    public void setComment_info(List<CommentInfoBean> comment_info) {
+        this.comment_info = comment_info;
+    }
+
     public static class DetailsInfoBean {
         /**
          * type : 0
@@ -194,4 +224,5 @@ public class NewResponseJson {
             this.goods_name = goods_name;
         }
     }
+
 }

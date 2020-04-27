@@ -1,98 +1,49 @@
 package com.hnu.entity;
 
-import java.sql.Timestamp;
-
 public class Comment {
 
-    private Integer id;
-    private Integer userId;
-    private Integer replyCommentId;
-    private String comment;
-    private Timestamp insertTime;
-    private long sourceId;
-    private String username;
-    private String replyUserName;
-    private String userPhoto;
 
+    /**
+     * u_id :
+     * demand_id :
+     * comment_content : 评论内容
+     * subtime : 2020-03-02 12:12:12
+     */
 
-    public long getId() {
-        return id;
+    private String u_id;
+    private String demand_id;
+    private String comment_content;
+    private String subtime;
+
+    public String getU_id() {
+        return u_id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setU_id(String u_id) {
+        this.u_id = u_id;
     }
 
-
-    public long getUserId() {
-        return userId;
+    public String getDemand_id() {
+        return demand_id;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setDemand_id(String demand_id) {
+        this.demand_id = demand_id;
     }
 
-
-    public long getReplyCommentId() {
-        return replyCommentId;
+    public String getComment_content() {
+        return comment_content;
     }
 
-    public void setReplyCommentId(Integer replyCommentId) {
-        this.replyCommentId = replyCommentId;
+    public void setComment_content(String comment_content) {
+        this.comment_content = comment_content;
     }
 
-
-    public String getComment() {
-        return comment;
+    public String getSubtime() {
+        return subtime;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setSubtime(String subtime) {
+        this.subtime = subtime;
     }
-
-
-    public java.sql.Timestamp getInsertTime() {
-        return insertTime;
-    }
-
-    public void setInsertTime(java.sql.Timestamp insertTime) {
-        this.insertTime = insertTime;
-    }
-
-
-    public long getSourceId() {
-        return sourceId;
-    }
-
-    public void setSourceId(long sourceId) {
-        this.sourceId = sourceId;
-    }
-
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-
-    public String getReplyUserName() {
-        return replyUserName;
-    }
-
-    public void setReplyUserName(String replyUserName) {
-        this.replyUserName = replyUserName;
-    }
-
-
-    public String getUserPhoto() {
-        return userPhoto;
-    }
-
-    public void setUserPhoto(String userPhoto) {
-        this.userPhoto = userPhoto;
-    }
-
 }
