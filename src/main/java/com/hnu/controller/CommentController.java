@@ -19,6 +19,11 @@ public class CommentController {
         this.commentService = commentService;
     }
 
+    /**
+     * 测试接口
+     *
+     * @return
+     */
     @GetMapping("/comment")
     public List<CommentInfoBean> getComment() {
         return commentService.findComments("");
