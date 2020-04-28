@@ -37,7 +37,6 @@ public class HomeController {
     public List<NewResponseJson> newest(@RequestBody NewJson newJson, @PathVariable() int page) {
 
         System.out.println(newJson);
-        //计算经纬度搜索范围 纬度1度是111KM,1分是1.85KM
         return getNewAndNearbyResponse(newJson, page);
     }
 
@@ -61,11 +60,11 @@ public class HomeController {
     @PostMapping("/nearby/{page}")
     public List<NewResponseJson> getNearBy(@RequestBody NewJson newJson, @PathVariable int page) {
         System.out.println("start --> getNearBy");
-        //计算经纬度搜索范围 纬度1度是111KM,1分是1.85KM
         return getNewAndNearbyResponse(newJson, page);
     }
 
     private List<NewResponseJson> getNewAndNearbyResponse(@RequestBody NewJson newJson, @PathVariable int page) {
+        //计算经纬度搜索范围 纬度1度是111KM,1分是1.85KM
         float max_lon = Float.parseFloat(newJson.getLongitude()) + Float.parseFloat(newJson.getSearchRange()) / 111;
         float min_lon = Float.parseFloat(newJson.getLongitude()) - Float.parseFloat(newJson.getSearchRange()) / 111;
         float max_lat = Float.parseFloat(newJson.getLatitude()) + Float.parseFloat(newJson.getSearchRange()) / 111;
