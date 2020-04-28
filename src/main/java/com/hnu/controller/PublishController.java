@@ -3,7 +3,10 @@ package com.hnu.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.hnu.entity.Demand;
 import com.hnu.entity.Material;
+import com.hnu.entity.publish.GoodsBean;
 import com.hnu.entity.publish.PublishJson;
+import com.hnu.entity.user.UserInfo;
+import com.hnu.repository.UserInfoRepository;
 import com.hnu.server.PublishService;
 import com.hnu.utils.WXAPPInfo;
 import com.hnu.utils.WebRequestUtil;
@@ -22,7 +25,9 @@ import java.util.Map;
 public class PublishController {
 
     @Autowired
-    PublishService publishServer = null;
+    PublishService publishServer;
+    @Autowired
+    UserInfoRepository userInfoRepository;
 
 
     /**
@@ -31,8 +36,16 @@ public class PublishController {
     @PostMapping(value = "/SupAndDem")
     @ResponseBody
     public String publish(@RequestBody PublishJson content, HttpServletResponse response) {
+        System.out.println(content.toString());
         JSONObject back = new JSONObject();//返回的消息
         response.setStatus(HttpServletResponse.SC_CREATED);//状态
+        //先查用户是否存在
+        final UserInfo userInfo = userInfoRepository.findByOpenId(content.getU_id());
+        if (userInfo == null) {
+            back.put("msg", "用户不存在！");
+            back.put("status_code", "500");
+            return back.toJSONString();
+        }
         //获取访问服务端的token
         String access_token = WXAPPInfo.getAccess_token();
         if (access_token == null) {
@@ -62,7 +75,9 @@ public class PublishController {
         }
         //否则，数据合规，封装数据
         Demand demand = new Demand();
-        demand.setU_id_id(content.getU_id());
+        demand.setNick_name(userInfo.getNick_name());
+        demand.setAvatar_url(userInfo.getAvatar_url());
+        demand.setU_id_id(userInfo.getId());
         demand.setDemand_id(content.getDemand_id());
         demand.setS_lon(content.getLon());
         demand.setS_lat(content.getLat());
@@ -84,11 +99,10 @@ public class PublishController {
         }
         demand.setStore_name(content.getStore_name());
 
-
-        List<PublishJson.GoodsBean> goods = content.getGoods();
+        List<GoodsBean> goods = content.getGoods();
         List<Material> resources = new ArrayList<>();
         if (goods != null) {
-            for (PublishJson.GoodsBean good : goods) {
+            for (GoodsBean good : goods) {
                 Material resource = new Material();
                 resource.setType(content.getType());
                 resource.setCount(good.getNum_or_price());

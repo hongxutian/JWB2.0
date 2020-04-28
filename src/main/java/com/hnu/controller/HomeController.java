@@ -99,6 +99,7 @@ public class HomeController {
             responseJson.setS_nation(demand.getS_nation());
             responseJson.setS_city(demand.getS_city());
             responseJson.setS_province(demand.getS_province());
+            responseJson.setS_district(demand.getS_district());
             responseJson.setS_street(demand.getS_street());
             responseJson.setS_street_number(demand.getS_street_number());
             responseJson.setS_content(demand.getS_content());

@@ -40,6 +40,7 @@ public class CommentService {
         switch (contentValidate) {
             case PASS:
                 //通过
+                commentRepository.insertComment(comment);
                 back.put("msg", "操作成功！");
                 back.put("status_code", "200");
                 break;

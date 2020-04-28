@@ -20,6 +20,7 @@ public class UserInfo {
      * street_number : 2号
      */
 
+    private int id;
     private int u_type;
     private String open_id;
     private String nick_name;
@@ -34,6 +35,14 @@ public class UserInfo {
     private String district;
     private String street;
     private String street_number;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getU_type() {
         return u_type;
