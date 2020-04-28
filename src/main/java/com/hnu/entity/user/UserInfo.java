@@ -27,8 +27,8 @@ public class UserInfo {
     private String avatar_url;
     private String gender;
     private String store_name;
-    private int m_longitude;
-    private int m_latitude;
+    private float m_longitude;
+    private float m_latitude;
     private String nation;
     private String city;
     private String province;
@@ -92,19 +92,19 @@ public class UserInfo {
         this.store_name = store_name;
     }
 
-    public int getM_longitude() {
+    public float getM_longitude() {
         return m_longitude;
     }
 
-    public void setM_longitude(int m_longitude) {
+    public void setM_longitude(float m_longitude) {
         this.m_longitude = m_longitude;
     }
 
-    public int getM_latitude() {
+    public float getM_latitude() {
         return m_latitude;
     }
 
-    public void setM_latitude(int m_latitude) {
+    public void setM_latitude(float m_latitude) {
         this.m_latitude = m_latitude;
     }
 
