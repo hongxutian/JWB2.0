@@ -1,6 +1,5 @@
 package com.hnu.controller;
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.hnu.entity.Demand;
 import com.hnu.entity.Material;
@@ -60,27 +59,28 @@ public class PublishController {
         }
         //否则，数据合规，封装数据
         Demand demand = new Demand();
-        demand.setuIdId(content.getU_id());
-        demand.setsLon(content.getLon());
-        demand.setsLat(content.getLat());
-        demand.setsNation(content.getNation());
-        demand.setsProvince(content.getProvince());
-        demand.setsCity(content.getCity());
-        demand.setsDistrict(content.getDistrict());
-        demand.setsStreet(content.getStreet());
-        demand.setsStreetNumber(content.getStreet_number());
-        demand.setsContent(content.getContent());
-        demand.setsType(content.getType());
-        demand.setsRange(content.getRange());
-        demand.setsAging(content.getAging());
+        demand.setU_id_id(content.getU_id());
+        demand.setDemand_id(content.getDemand_id());
+        demand.setS_lon(content.getLon());
+        demand.setS_lat(content.getLat());
+        demand.setS_nation(content.getNation());
+        demand.setS_province(content.getProvince());
+        demand.setS_city(content.getCity());
+        demand.setS_district(content.getDistrict());
+        demand.setS_street(content.getStreet());
+        demand.setS_street_number(content.getStreet_number());
+        demand.setS_content(content.getContent());
+        demand.setS_type(content.getType());
+        demand.setS_range(content.getRange());
+        demand.setS_aging(content.getAging());
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {
-            demand.setsSubtime(format.parse(content.getSubtime()));
+            demand.setS_subtime(format.parse(content.getSubtime()));
         } catch (ParseException e) {
             e.printStackTrace();
             demand.setsSubtime(new Date());
         }
-        demand.setStoreName(content.getStore_name());
+        demand.setStore_name(content.getStore_name());
 
 
         List<PublishJson.GoodsBean> goods = content.getGoods();
@@ -91,7 +91,7 @@ public class PublishController {
                 Material resource = new Material();
                 resource.setType(content.getType());
                 resource.setCount(good.getNum_or_price());
-                resource.setGoodsName(good.getGoods_name());
+                resource.setGoods_name(good.getGoods_name());
                 resources.add(resource);
             }
         }

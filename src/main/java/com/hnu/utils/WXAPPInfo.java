@@ -79,13 +79,4 @@ public class WXAPPInfo {
         }
     }
 
-    public static JSONArray isJSONArray(String src){
-        try {
-            JSONArray res = JSONArray.parseArray(src);
-            return res;
-        }catch (RuntimeException e){
-            return null;
-        }
-    }
-
 }

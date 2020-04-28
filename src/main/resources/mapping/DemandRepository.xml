@@ -6,9 +6,10 @@
 
 <!--  查询语句  -->
     <select id="findByRange" parameterType="com.hnu.entity.newest.Limit" resultType="com.hnu.entity.Demand">
-       select * from medical_resources_demand d where d.s_lon &lt;= #{maxLon}
+       select u.nick_name, u.avatar_url, d.* from medical_resources_userinfo u, medical_resources_demand d where d.s_lon &lt;= #{maxLon}
        and d.s_lon &gt;= #{minLon} and d.s_lat &lt;= #{maxLat} and d.s_lat &gt;= #{minLat}
-       and d.s_subtime &gt;= #{startTime} and d.s_subtime &lt;= #{endTime}
+       and d.s_subtime &gt;= #{startTime} and d.s_subtime &lt;= #{endTime} and d.u_id_id = u.id
+       order by d.s_subtime DESC
        limit #{start},#{limit};
 
     </select>
@@ -16,10 +17,10 @@
     <insert id="insertDemand" parameterType="com.hnu.entity.Demand" useGeneratedKeys="true" keyProperty="id">
 
         insert into medical_resources_demand(s_lon,s_lat,s_nation,s_city,s_province,s_district,
-        s_street,s_street_number,s_content,s_type,s_range,s_aging,s_subtime,store_name,u_id_id)
+        s_street,s_street_number,s_content,s_type,s_range,s_aging,s_subtime,store_name,u_id_id,demand_id)
         values (
-        #{sLon},#{sLat},#{sNation},#{sCity},#{sProvince},#{sDistrict},#{sStreet},#{sStreetNumber},#{sContent},#{sType},
-        #{sRange},#{sAging},#{sSubtime},#{storeName},#{uIdId}
+        #{s_lon},#{s_lat},#{s_nation},#{s_city},#{s_province},#{s_district},#{s_street},#{s_street_number},#{s_content},#{s_type},
+        #{s_range},#{s_aging},#{s_subtime},#{store_name},#{u_id_id},#{demand_id}
         );
 
     </insert>

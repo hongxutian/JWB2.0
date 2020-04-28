@@ -1,0 +1,17 @@
+{
+  "u_id": 122233,
+  "lon": 31.4,
+  "lat": 13.5,
+  "content": "需求内容",
+  "type": 1,
+  "range": 12,
+  "aging": 12,
+  "subtime": "2020-03-02 12:12:12",
+  "nation": "中国",
+  "province": "湖南省",
+  "city": "长沙市",
+  "district": "岳麓区",
+  "street": "庐山南麓",
+  "street_number": "12号",
+  "store_name": "老百姓大药房"
+}

@@ -12,7 +12,7 @@
             (
             #{item.type},
             #{item.count},
-            #{item.goodsName},
+            #{item.goods_name},
             #{item.m_id_id}
             )
         </foreach>

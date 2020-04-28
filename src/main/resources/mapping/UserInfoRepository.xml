@@ -4,8 +4,8 @@
 <!-- mapper 为根元素节点， 一个namespace对应一个repo -->
 <mapper namespace="com.hnu.repository.UserInfoRepository">
     
-    <select id="findByOpenId" parameterType="java.lang.Integer" resultType="com.hnu.entity.user.UserInfo">
-        select * from medical_resources_userinfo where open_id = #{open_id}
+    <select id="findByOpenId" parameterType="java.lang.String" resultType="com.hnu.entity.user.UserInfo">
+        select * from medical_resources_userinfo where open_id = #{openId}
     </select>
 
     <insert id="save" parameterType="com.hnu.entity.user.UserInfo">
@@ -13,8 +13,14 @@
         values(#{u_type}, #{open_id}, #{nick_name}, #{avatar_url}, #{gender}, #{store_name}, #{m_longitude}, #{m_latitude}, #{nation}, #{city}, #{province}, #{district}, #{street}, #{street_number} )
     </insert>
 
-    <select id="selectUserInfo" resultType="com.hnu.entity.SearUserInforBean">
-        select * from medical_resources_userinfo where id = #{id}
+
+    <select id="selectUserInfo" resultType="com.hnu.entity.user.UserInfo">
+        select
+        u_type as uType, open_id as openId, nick_name as nickName, avatar_url as avatarUrl,
+        gender, nation, province, city, district, street, street_number as streetNumber,
+        store_name as store_name, m_longitude as mLongitude, m_latitude as mLatitude
+        from medical_resources_userinfo where id = #{id}
+
     </select>
 
 

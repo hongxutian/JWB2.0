@@ -5,7 +5,7 @@ public class Material {
 
     private int type;
     private float count;
-    private String goodsName;
+    private String goods_name;
     private int m_id_id;
 
     public int getType() {
@@ -29,13 +29,13 @@ public class Material {
         this.count = count;
     }
 
-    public String getGoodsName() {
-        return goodsName;
+    public String getGoods_name() {
+        return goods_name;
 
     }
     /**  */
-    public void setGoodsName(String goodsName){
-        this.goodsName = goodsName;
+    public void setGoods_name(String goods_name){
+        this.goods_name = goods_name;
     }
 
 

@@ -37,6 +37,7 @@ public class SearchService {
             List<SearchBean> r = new ArrayList<>();
             for(int i=0;i<res.size();i++){
                 Demand demand = res.get(i);
+
                 SearchBean searchBean = new SearchBean();
                 searchBean.setS_lon(demand.getsLon());
                 SearUserInforBean userInfo = userInfoRepository.selectUserInfo(demand.getuIdId());
@@ -73,6 +74,7 @@ public class SearchService {
                 searchBean.setU_id(uIdBean);
 
                 r.add(searchBean);
+
             }
             return r;
         }catch (RuntimeException e){
