@@ -120,7 +120,7 @@ public class WebRequestUtil {
         parameter.put("access_token", accessToken);
         JSONObject header = new JSONObject();
         header.put("content", content);
-        String response = wrPOST_JSON("", parameter, header.toJSONString());
+        String response = wrPOST_JSON("https://api.weixin.qq.com/wxa/msg_sec_check", parameter, header.toJSONString());
         JSONObject object = WXAPPInfo.isJSON(response);
         //向微信服务端申请出现异常
         if (object == null) {

@@ -17,35 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/SearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
+            <state relative-caret-position="506">
               <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/server/SearchService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="41" column="98" selection-start-line="41" selection-start-column="98" selection-end-line="41" selection-end-column="98" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/repository/UserInfoRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/UserInfoRepository.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -53,69 +26,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/entity/SearUserInforBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="138">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding>
-                <element signature="e#704#705#0" expanded="true" />
-                <element signature="e#734#735#0" expanded="true" />
-                <element signature="e#774#775#0" expanded="true" />
-                <element signature="e#802#803#0" expanded="true" />
+                <element signature="e#810#811#0" expanded="true" />
                 <element signature="e#838#839#0" expanded="true" />
-                <element signature="e#871#872#0" expanded="true" />
-                <element signature="e#917#918#0" expanded="true" />
-                <element signature="e#951#952#0" expanded="true" />
-                <element signature="e#988#989#0" expanded="true" />
-                <element signature="e#1022#1023#0" expanded="true" />
+                <element signature="e#1036#1037#0" expanded="true" />
                 <element signature="e#1070#1071#0" expanded="true" />
-                <element signature="e#1106#1107#0" expanded="true" />
-                <element signature="e#1145#1146#0" expanded="true" />
-                <element signature="e#1181#1182#0" expanded="true" />
-                <element signature="e#1233#1234#0" expanded="true" />
-                <element signature="e#1273#1274#0" expanded="true" />
-                <element signature="e#1313#1314#0" expanded="true" />
-                <element signature="e#1350#1351#0" expanded="true" />
-                <element signature="e#1404#1405#0" expanded="true" />
-                <element signature="e#1446#1447#0" expanded="true" />
-                <element signature="e#1483#1484#0" expanded="true" />
-                <element signature="e#1517#1518#0" expanded="true" />
-                <element signature="e#1565#1566#0" expanded="true" />
+                <element signature="e#1567#1568#0" expanded="true" />
                 <element signature="e#1601#1602#0" expanded="true" />
-                <element signature="e#1641#1642#0" expanded="true" />
-                <element signature="e#1678#1679#0" expanded="true" />
-                <element signature="e#1732#1733#0" expanded="true" />
+                <element signature="e#1737#1738#0" expanded="true" />
                 <element signature="e#1774#1775#0" expanded="true" />
-                <element signature="e#1815#1816#0" expanded="true" />
-                <element signature="e#1853#1854#0" expanded="true" />
-                <element signature="e#1909#1910#0" expanded="true" />
-                <element signature="e#1953#1954#0" expanded="true" />
-                <element signature="e#1993#1994#0" expanded="true" />
-                <element signature="e#2030#2031#0" expanded="true" />
-                <element signature="e#2084#2085#0" expanded="true" />
-                <element signature="e#2126#2127#0" expanded="true" />
-                <element signature="e#2163#2164#0" expanded="true" />
-                <element signature="e#2197#2198#0" expanded="true" />
-                <element signature="e#2245#2246#0" expanded="true" />
-                <element signature="e#2281#2282#0" expanded="true" />
-                <element signature="e#2316#2317#0" expanded="true" />
-                <element signature="e#2348#2349#0" expanded="true" />
-                <element signature="e#2392#2393#0" expanded="true" />
-                <element signature="e#2424#2425#0" expanded="true" />
-                <element signature="e#2463#2464#0" expanded="true" />
-                <element signature="e#2499#2500#0" expanded="true" />
-                <element signature="e#2551#2552#0" expanded="true" />
-                <element signature="e#2591#2592#0" expanded="true" />
-                <element signature="e#2630#2631#0" expanded="true" />
-                <element signature="e#2666#2667#0" expanded="true" />
-                <element signature="e#2718#2719#0" expanded="true" />
-                <element signature="e#2758#2759#0" expanded="true" />
-                <element signature="e#2795#2796#0" expanded="true" />
-                <element signature="e#2829#2830#0" expanded="true" />
-                <element signature="e#2877#2878#0" expanded="true" />
-                <element signature="e#2913#2914#0" expanded="true" />
-                <element signature="e#2956#2957#0" expanded="true" />
-                <element signature="e#2996#2997#0" expanded="true" />
-                <element signature="e#3056#3057#0" expanded="true" />
-                <element signature="e#3104#3105#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/PublishController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="32" column="114" selection-start-line="32" selection-start-column="114" selection-end-line="32" selection-end-column="114" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -136,13 +69,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/hnu/controller/PublishController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hnu/controller/SearchController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hnu/entity/SearchBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hnu/entity/SearUserInforBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hnu/utils/WXAPPInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hnu/server/SearchService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hnu/repository/UserInfoRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/UserInfoRepository.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hnu/entity/SearUserInforBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hnu/server/SearchService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hnu/utils/WebRequestUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hnu/controller/PublishController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hnu/config/WebConfigurer.java" />
       </list>
     </option>
   </component>
@@ -169,7 +105,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -240,8 +175,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="hnu" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JWB2.0" type="b2602c69:ProjectViewProjectNode" />
@@ -262,6 +196,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -308,17 +243,18 @@
       <workItem from="1587911046627" duration="6330000" />
       <workItem from="1587917605862" duration="720000" />
       <workItem from="1587952814599" duration="1983000" />
+      <workItem from="1588058278060" duration="4336000" />
+      <workItem from="1588071937186" duration="836000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9220000" />
+    <option name="totallyTimeSpent" value="14392000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1455" height="935" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2806013" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23264137" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -328,8 +264,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32991013" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" visible="true" weight="0.1745828" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.24775353" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" weight="0.2554557" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.08985879" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -342,6 +278,7 @@
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49821046" weight="0.42490372" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.3298969" />
+      <window_info anchor="bottom" id="Duplicates" order="16" weight="0.40693197" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -358,57 +295,13 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/HelloController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/entity/publish/PublishJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="186" column="26" selection-start-line="186" selection-start-column="26" selection-end-line="186" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/server/PublishService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/entity/Material.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/MaterialRepository.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/entity/MedicalRescourcesDemand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-874">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/entity/MedicalRescourcesDemand.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/repository/DemandRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -423,52 +316,166 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/RegisterController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/server/CommentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-299">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/repository/UserInfoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/UserInfoRepository.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="16" column="69" selection-start-line="16" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/common/config/demand.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/common/config/comment.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/common/config/loginRespJson.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/common/config/loginresponse.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/common/config/SwaggerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/config/JwtInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/PublishController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="75" column="77" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="71">
+          <caret line="107" column="54" lean-forward="true" selection-start-line="107" selection-start-column="54" selection-end-line="107" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/HelloController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/CommentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/entity/Demand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="224">
+          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1614#1615#0" expanded="true" />
-            <element signature="e#1646#1647#0" expanded="true" />
+            <element signature="e#750#751#0" expanded="true" />
+            <element signature="e#804#805#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/entity/user/UserInfo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.2.3.RELEASE/spring-web-5.2.3.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-713">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="99">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/server/SearchService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1449">
+          <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/entity/publish/PublishJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2415">
+          <caret line="166" selection-start-line="166" selection-end-line="166" />
+          <folding>
+            <element signature="e#2370#2371#0" expanded="true" />
+            <element signature="e#2400#2401#0" expanded="true" />
+            <element signature="e#3246#3247#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/config/WebConfigurer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/JWBApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/utils/JWT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/utils/WXAPPInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/server/PublishService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="41" column="21" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/entity/SearchBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="-182">
           <caret line="196" column="20" selection-start-line="196" selection-start-column="20" selection-end-line="196" selection-end-column="20" />
           <folding>
             <element signature="e#4945#4946#0" expanded="true" />
@@ -477,100 +484,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/SearchController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/entity/Material.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        <state relative-caret-position="138">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/entity/Demand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/entity/Comment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/entity/SearUserInforBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="138">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
-            <element signature="e#704#705#0" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
             <element signature="e#838#839#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-            <element signature="e#917#918#0" expanded="true" />
-            <element signature="e#951#952#0" expanded="true" />
-            <element signature="e#988#989#0" expanded="true" />
-            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
             <element signature="e#1070#1071#0" expanded="true" />
-            <element signature="e#1106#1107#0" expanded="true" />
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1233#1234#0" expanded="true" />
-            <element signature="e#1273#1274#0" expanded="true" />
-            <element signature="e#1313#1314#0" expanded="true" />
-            <element signature="e#1350#1351#0" expanded="true" />
-            <element signature="e#1404#1405#0" expanded="true" />
-            <element signature="e#1446#1447#0" expanded="true" />
-            <element signature="e#1483#1484#0" expanded="true" />
-            <element signature="e#1517#1518#0" expanded="true" />
-            <element signature="e#1565#1566#0" expanded="true" />
+            <element signature="e#1567#1568#0" expanded="true" />
             <element signature="e#1601#1602#0" expanded="true" />
-            <element signature="e#1641#1642#0" expanded="true" />
-            <element signature="e#1678#1679#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
+            <element signature="e#1737#1738#0" expanded="true" />
             <element signature="e#1774#1775#0" expanded="true" />
-            <element signature="e#1815#1816#0" expanded="true" />
-            <element signature="e#1853#1854#0" expanded="true" />
-            <element signature="e#1909#1910#0" expanded="true" />
-            <element signature="e#1953#1954#0" expanded="true" />
-            <element signature="e#1993#1994#0" expanded="true" />
-            <element signature="e#2030#2031#0" expanded="true" />
-            <element signature="e#2084#2085#0" expanded="true" />
-            <element signature="e#2126#2127#0" expanded="true" />
-            <element signature="e#2163#2164#0" expanded="true" />
-            <element signature="e#2197#2198#0" expanded="true" />
-            <element signature="e#2245#2246#0" expanded="true" />
-            <element signature="e#2281#2282#0" expanded="true" />
-            <element signature="e#2316#2317#0" expanded="true" />
-            <element signature="e#2348#2349#0" expanded="true" />
-            <element signature="e#2392#2393#0" expanded="true" />
-            <element signature="e#2424#2425#0" expanded="true" />
-            <element signature="e#2463#2464#0" expanded="true" />
-            <element signature="e#2499#2500#0" expanded="true" />
-            <element signature="e#2551#2552#0" expanded="true" />
-            <element signature="e#2591#2592#0" expanded="true" />
-            <element signature="e#2630#2631#0" expanded="true" />
-            <element signature="e#2666#2667#0" expanded="true" />
-            <element signature="e#2718#2719#0" expanded="true" />
-            <element signature="e#2758#2759#0" expanded="true" />
-            <element signature="e#2795#2796#0" expanded="true" />
-            <element signature="e#2829#2830#0" expanded="true" />
-            <element signature="e#2877#2878#0" expanded="true" />
-            <element signature="e#2913#2914#0" expanded="true" />
-            <element signature="e#2956#2957#0" expanded="true" />
-            <element signature="e#2996#2997#0" expanded="true" />
-            <element signature="e#3056#3057#0" expanded="true" />
-            <element signature="e#3104#3105#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/UserInfoRepository.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/SearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
+        <state relative-caret-position="506">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/repository/UserInfoRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/utils/WebRequestUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+        <state relative-caret-position="184">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/server/SearchService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/entity/user/UserInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="41" column="98" selection-start-line="41" selection-start-column="98" selection-end-line="41" selection-end-column="98" />
+        <state relative-caret-position="983">
+          <caret line="85" column="15" selection-start-line="85" selection-start-column="15" selection-end-line="85" selection-end-column="15" />
+          <folding>
+            <element signature="e#1724#1725#0" expanded="true" />
+            <element signature="e#1758#1759#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnu/controller/PublishController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="32" column="114" selection-start-line="32" selection-start-column="114" selection-end-line="32" selection-end-column="114" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

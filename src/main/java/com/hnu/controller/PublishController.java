@@ -30,29 +30,7 @@ public class PublishController {
     public String publish(@RequestBody PublishJson content, HttpServletResponse response) {
         JSONObject back = new JSONObject();//返回的消息
         response.setStatus(HttpServletResponse.SC_CREATED);//状态
-        //获取访问服务端的token
-        String access_token = WXAPPInfo.getAccess_token();
-        if (access_token == null) {
-            back.put("msg", "操作失败");
-            back.put("status_code", "500");
-            return back.toJSONString();
-        }
-        //进行内容校验
-        Map<String, String> parameter = new LinkedHashMap<>();
-        parameter.put("access_token", access_token);
-
-        JSONObject req = new JSONObject();
-        req.put("content", content.getContent() + content.getStore_name());
-        String reqRes = WebRequestUtil.wrPOST_JSON("https://api.weixin.qq.com/wxa/msg_sec_check", parameter, req.toJSONString());
-        JSONObject object = WXAPPInfo.isJSON(reqRes);
-        //向微信服务端申请出现异常
-        if (object == null) {
-            back.put("msg", "未知错误！");
-            back.put("status_code", "500");
-            return back.toJSONString();
-        }
-        //内容不合格
-        if (!"ok".equals(object.getString("errmsg"))) {
+        if(WebRequestUtil.checkContent(content.getContent() + content.getStore_name()) != WebRequestUtil.ContentValidate.PASS){
             back.put("msg", "内容涉及敏感词！");
             back.put("status_code", "500");
             return back.toJSONString();
@@ -78,7 +56,7 @@ public class PublishController {
             demand.setS_subtime(format.parse(content.getSubtime()));
         } catch (ParseException e) {
             e.printStackTrace();
-            demand.setsSubtime(new Date());
+            demand.setS_subtime(new Date());
         }
         demand.setStore_name(content.getStore_name());
 
