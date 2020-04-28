@@ -56,4 +56,15 @@ public class LoginResponseJson {
     public void setErrmsg(String errmsg) {
         this.errmsg = errmsg;
     }
+
+    @Override
+    public String toString() {
+        return "LoginResponseJson{" +
+                "openid='" + openid + '\'' +
+                ", session_key='" + session_key + '\'' +
+                ", unionid='" + unionid + '\'' +
+                ", errcode=" + errcode +
+                ", errmsg='" + errmsg + '\'' +
+                '}';
+    }
 }
