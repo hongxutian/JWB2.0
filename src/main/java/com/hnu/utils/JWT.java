@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class JWT {
+
     private static final String SECRET = "XX#$%()(#*!()!KL<><MQLMNQNQJQKsdfkjsdrow32234545fdf>?N<:{LWPW";
 
     private static final String EXP = "exp";
