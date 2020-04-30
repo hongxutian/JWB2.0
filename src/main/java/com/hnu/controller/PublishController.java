@@ -46,34 +46,26 @@ public class PublishController {
             back.put("status_code", "500");
             return back.toJSONString();
         }
-        //获取访问服务端的token
-        String access_token = WXAPPInfo.getAccess_token();
-        if (access_token == null) {
-            back.put("msg", "操作失败");
-            back.put("status_code", "500");
-            return back.toJSONString();
-        }
         //进行内容校验
-        Map<String, String> parameter = new LinkedHashMap<>();
-        parameter.put("access_token", access_token);
-
-        JSONObject req = new JSONObject();
-        req.put("content", content.getContent() + content.getStore_name());
-        String reqRes = WebRequestUtil.wrPOST_JSON("https://api.weixin.qq.com/wxa/msg_sec_check", parameter, req.toJSONString());
-        JSONObject object = WXAPPInfo.isJSON(reqRes);
-        //向微信服务端申请出现异常
-        if (object == null) {
-            back.put("msg", "未知错误！");
-            back.put("status_code", "500");
-            return back.toJSONString();
+        final WebRequestUtil.ContentValidate validate =
+                WebRequestUtil.checkContent(content.getContent() + content.getStore_name());
+        switch (validate) {
+            case SENSITIVE:
+                back.put("msg", "内容涉及敏感词！");
+                back.put("status_code", "500");
+                return back.toJSONString();
+            case ERROR:
+                back.put("msg", "未知错误！");
+                back.put("status_code", "500");
+                return back.toJSONString();
+            case TOKE_FAIL:
+            case FAIL:
+                back.put("msg", "操作失败！");
+                back.put("status_code", "500");
+                return back.toJSONString();
+            case PASS:
         }
-        //内容不合格
-        if (!"ok".equals(object.getString("errmsg"))) {
-            back.put("msg", "内容涉及敏感词！");
-            back.put("status_code", "500");
-            return back.toJSONString();
-        }
-        //否则，数据合规，封装数据
+        //检查通过，数据合规，封装数据
         Demand demand = new Demand();
         demand.setNick_name(userInfo.getNick_name());
         demand.setAvatar_url(userInfo.getAvatar_url());

@@ -9,6 +9,9 @@
        select u.nick_name, u.avatar_url, d.* from medical_resources_userinfo u, medical_resources_demand d where d.s_lon &lt;= #{maxLon}
        and d.s_lon &gt;= #{minLon} and d.s_lat &lt;= #{maxLat} and d.s_lat &gt;= #{minLat}
        and d.s_subtime &gt;= #{startTime} and d.s_subtime &lt;= #{endTime} and d.u_id_id = u.id
+       <if test="id != -1">
+           and d.u_id_id = #{id}
+       </if>
        order by d.s_subtime DESC
        limit #{start},#{limit};
 
