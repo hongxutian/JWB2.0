@@ -13,11 +13,13 @@ public class Limit {
     private Date endTime;
     private int start;
     private int limit;
+    private int id;
 
-    public Limit() {
+    public Limit(int id) {
+
     }
 
-    public Limit(float maxLon, float minLon, float maxLat, float minLat, Date startTime, Date endTime, int start, int limit) {
+    public Limit(float maxLon, float minLon, float maxLat, float minLat, Date startTime, Date endTime, int start, int limit, int id) {
         this.maxLon = maxLon;
         this.minLon = minLon;
         this.maxLat = maxLat;
@@ -26,6 +28,15 @@ public class Limit {
         this.endTime = endTime;
         this.start = start;
         this.limit = limit;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public float getMaxLon() {

@@ -21,10 +21,10 @@ public class PublishService {
 
 
     @Transactional(rollbackFor = Exception.class)
-    public void savePublish(Demand demand, List<Material> resources){
+    public void savePublish(Demand demand, List<Material> resources) {
         demandRepository.insertDemand(demand);
         if (resources != null) {
-            for (int i=0;i<resources.size();i++){
+            for (int i = 0; i < resources.size(); i++) {
                 resources.get(i).setM_id_id(demand.getId());
             }
             materialRepository.insertMaterials(resources);

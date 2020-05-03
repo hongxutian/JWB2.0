@@ -20,20 +20,29 @@ public class UserInfo {
      * street_number : 2号
      */
 
+    private int id;
     private int u_type;
     private String open_id;
     private String nick_name;
     private String avatar_url;
     private String gender;
     private String store_name;
-    private int m_longitude;
-    private int m_latitude;
+    private float m_longitude;
+    private float m_latitude;
     private String nation;
     private String city;
     private String province;
     private String district;
     private String street;
     private String street_number;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getU_type() {
         return u_type;
@@ -83,19 +92,19 @@ public class UserInfo {
         this.store_name = store_name;
     }
 
-    public int getM_longitude() {
+    public float getM_longitude() {
         return m_longitude;
     }
 
-    public void setM_longitude(int m_longitude) {
+    public void setM_longitude(float m_longitude) {
         this.m_longitude = m_longitude;
     }
 
-    public int getM_latitude() {
+    public float getM_latitude() {
         return m_latitude;
     }
 
-    public void setM_latitude(int m_latitude) {
+    public void setM_latitude(float m_latitude) {
         this.m_latitude = m_latitude;
     }
 

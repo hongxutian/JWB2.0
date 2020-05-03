@@ -33,6 +33,7 @@ public class NewResponseJson {
     private String s_nation;
     private String s_city;
     private String s_province;
+    private String s_district;
     private String s_street;
     private String s_street_number;
     private String s_content;
@@ -83,6 +84,14 @@ public class NewResponseJson {
 
     public void setS_lon(BigDecimal s_lon) {
         this.s_lon = s_lon;
+    }
+
+    public String getS_district() {
+        return s_district;
+    }
+
+    public void setS_district(String s_district) {
+        this.s_district = s_district;
     }
 
     public BigDecimal getS_lat() {

@@ -1,6 +1,5 @@
 package com.hnu.controller;
 
-import com.hnu.entity.Comment;
 import com.hnu.entity.Demand;
 import com.hnu.entity.newest.CommentInfoBean;
 import com.hnu.entity.newest.Limit;
@@ -8,9 +7,11 @@ import com.hnu.entity.Material;
 import com.hnu.entity.me.MeJson;
 import com.hnu.entity.newest.NewJson;
 import com.hnu.entity.newest.NewResponseJson;
+import com.hnu.entity.user.UserInfo;
 import com.hnu.repository.CommentRepository;
 import com.hnu.repository.DemandRepository;
 import com.hnu.repository.MaterialRepository;
+import com.hnu.repository.UserInfoRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
@@ -25,11 +26,13 @@ public class HomeController {
     private final DemandRepository demandRepository;
     private final MaterialRepository materialRepository;
     private final CommentRepository commentRepository;
+    private final UserInfoRepository userInfoRepository;
 
-    public HomeController(DemandRepository demandRepository, MaterialRepository materialRepository, CommentRepository commentRepository) {
+    public HomeController(DemandRepository demandRepository, MaterialRepository materialRepository, CommentRepository commentRepository, UserInfoRepository userInfoRepository) {
         this.demandRepository = demandRepository;
         this.materialRepository = materialRepository;
         this.commentRepository = commentRepository;
+        this.userInfoRepository = userInfoRepository;
     }
 
     @PostMapping("/new/{page}")
@@ -43,13 +46,15 @@ public class HomeController {
     @PostMapping("/me/{page}")
     public List<NewResponseJson> getMe(@RequestBody MeJson meJson, @PathVariable int page) {
 //        返回结果和最新的json格式一致
+        //先查该用户
+        final UserInfo user = userInfoRepository.findByOpenId(meJson.getU_id());
         int counts = Integer.parseInt(meJson.getPage_items_count());
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {
             Date date1 = format.parse(meJson.getStart_time());
             Date date2 = format.parse(meJson.getEnd_time());
             //查询符合条件的需求数据
-            Limit limit = new Limit(180, 0, 90, 0, date1, date2, (page - 1) * counts, counts);
+            Limit limit = new Limit(180, 0, 90, 0, date1, date2, (page - 1) * counts, counts, user.getId());
             return getResponseJsons(format, limit);
         } catch (ParseException e) {
             e.printStackTrace();
@@ -75,7 +80,7 @@ public class HomeController {
             Date date1 = format.parse(newJson.getStartTime());
             Date date2 = format.parse(newJson.getEndTime());
             //查询符合条件的需求数据
-            Limit limit = new Limit(max_lon, min_lon, max_lat, min_lat, date1, date2, (page - 1) * counts, counts);
+            Limit limit = new Limit(max_lon, min_lon, max_lat, min_lat, date1, date2, (page - 1) * counts, counts, -1);
             return getResponseJsons(format, limit);
         } catch (ParseException e) {
             e.printStackTrace();
@@ -99,6 +104,7 @@ public class HomeController {
             responseJson.setS_nation(demand.getS_nation());
             responseJson.setS_city(demand.getS_city());
             responseJson.setS_province(demand.getS_province());
+            responseJson.setS_district(demand.getS_district());
             responseJson.setS_street(demand.getS_street());
             responseJson.setS_street_number(demand.getS_street_number());
             responseJson.setS_content(demand.getS_content());
@@ -107,7 +113,8 @@ public class HomeController {
             responseJson.setS_aging(demand.getS_aging());
             responseJson.setS_subtime(format.format(demand.getS_subtime()));
             // 查找物料详情
-            final List<Material> materialList = materialRepository.findMaterialById(demand.getU_id_id());
+            //根据物料  id
+            final List<Material> materialList = materialRepository.findMaterialById(demand.getId());
             List<NewResponseJson.DetailsInfoBean> beans = new ArrayList<>();
             for (Material material : materialList) {
                 NewResponseJson.DetailsInfoBean bean = new NewResponseJson.DetailsInfoBean();

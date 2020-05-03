@@ -11,8 +11,6 @@ public class Demand {
     private String avatar_url;
     private String nick_name;
     private String demand_id;
-    @JsonAlias(value = "u_id")
-    private int u_id;
     @JsonAlias(value = "lon")
     private BigDecimal s_lon;
     @JsonAlias(value = "lat")
@@ -74,14 +72,6 @@ public class Demand {
 
     public void setDemand_id(String demand_id) {
         this.demand_id = demand_id;
-    }
-
-    public int getU_id() {
-        return u_id;
-    }
-
-    public void setU_id(int u_id) {
-        this.u_id = u_id;
     }
 
     public BigDecimal getS_lon() {
@@ -209,7 +199,6 @@ public class Demand {
         return "Demand{" +
                 "id=" + id +
                 ", nick_name='" + nick_name + '\'' +
-                ", u_id=" + u_id +
                 ", s_lon=" + s_lon +
                 ", s_lat=" + s_lat +
                 ", s_nation='" + s_nation + '\'' +

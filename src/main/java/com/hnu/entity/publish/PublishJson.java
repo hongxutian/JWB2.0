@@ -25,7 +25,7 @@ public class PublishJson {
      * store_name : 默默药店
      */
 
-    private int u_id;
+    private String u_id;
     private BigDecimal lon;
     private BigDecimal lat;
     private String nation;
@@ -43,11 +43,11 @@ public class PublishJson {
     private String store_name;
     private List<GoodsBean> goods;
 
-    public int getU_id() {
+    public String getU_id() {
         return u_id;
     }
 
-    public void setU_id(int u_id) {
+    public void setU_id(String u_id) {
         this.u_id = u_id;
     }
 
@@ -179,29 +179,26 @@ public class PublishJson {
         this.goods = goods;
     }
 
-    public static class GoodsBean {
-        /**
-         * goods_name : 口罩
-         * num_or_price : 100
-         */
-
-        private String goods_name;
-        private int num_or_price;
-
-        public String getGoods_name() {
-            return goods_name;
-        }
-
-        public void setGoods_name(String goods_name) {
-            this.goods_name = goods_name;
-        }
-
-        public int getNum_or_price() {
-            return num_or_price;
-        }
-
-        public void setNum_or_price(int num_or_price) {
-            this.num_or_price = num_or_price;
-        }
+    @Override
+    public String toString() {
+        return "PublishJson{" +
+                "u_id='" + u_id + '\'' +
+                ", lon=" + lon +
+                ", lat=" + lat +
+                ", nation='" + nation + '\'' +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", district='" + district + '\'' +
+                ", street='" + street + '\'' +
+                ", street_number='" + street_number + '\'' +
+                ", content='" + content + '\'' +
+                ", demand_id='" + demand_id + '\'' +
+                ", type=" + type +
+                ", range=" + range +
+                ", aging=" + aging +
+                ", subtime='" + subtime + '\'' +
+                ", store_name='" + store_name + '\'' +
+                ", goods=" + goods +
+                '}';
     }
 }

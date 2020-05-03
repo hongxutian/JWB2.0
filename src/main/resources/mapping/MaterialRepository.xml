@@ -6,7 +6,7 @@
 
     <insert id="insertMaterials" parameterType="java.util.List">
         insert into medical_resources_material
-        ( type,count,goods_name,m_id_id)
+        (type,count,goods_name,m_id_id)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (
