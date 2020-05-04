@@ -2,7 +2,7 @@ spring:
   #  配置数据源
   datasource:
 
-    url: jdbc:mysql://47.97.165.179:3306/JWB?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/JWB?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: 123456
 
