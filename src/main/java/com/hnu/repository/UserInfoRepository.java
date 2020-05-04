@@ -14,4 +14,6 @@ public interface UserInfoRepository {
 
     SearUserInforBean selectUserInfo(long id);
 
+    UserInfo selectById(long id);
+
 }

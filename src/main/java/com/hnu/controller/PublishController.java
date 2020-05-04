@@ -38,7 +38,7 @@ public class PublishController {
         response.setStatus(HttpServletResponse.SC_CREATED);//状态
 
         //先查用户是否存在
-        final UserInfo userInfo = userInfoRepository.findByOpenId(content.getU_id());
+        final UserInfo userInfo = userInfoRepository.selectById(Long.parseLong(content.getU_id()));
         if (userInfo == null) {
             back.put("msg", "用户不存在！");
             back.put("status_code", "500");
@@ -93,8 +93,9 @@ public class PublishController {
 
 
         List<GoodsBean> goods = content.getGoods();
-        List<Material> resources = new ArrayList<>();
-        if (goods != null) {
+        List<Material> resources = null;
+        if (goods != null && goods.size()>0) {
+            resources = new ArrayList<>();
             for (GoodsBean good : goods) {
 
                 Material resource = new Material();

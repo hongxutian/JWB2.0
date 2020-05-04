@@ -23,5 +23,8 @@
 
     </select>
 
+    <select id="selectById" parameterType="long" resultType="com.hnu.entity.user.UserInfo">
+        select * from medical_resources_userinfo where id = #{id}
+    </select>
 
 </mapper>
