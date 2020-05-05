@@ -1,16 +1,13 @@
 package com.hnu.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.hnu.entity.login.LoginRespJson;
 import com.hnu.entity.login.LoginResponseJson;
 import com.hnu.entity.user.UserInfo;
 import com.hnu.repository.UserInfoRepository;
-import com.hnu.utils.JWT;
+import com.hnu.utils.AppJWTUtil;
 import com.hnu.utils.WXAPPInfo;
 import com.hnu.utils.WebRequestUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -47,7 +44,7 @@ public class LoginController {
         if (responseJson.getErrcode() == 0) {
             //登录成功
             //生成token,有效期30分钟
-            String token = JWT.sign(responseJson.getOpenid(), 60*1000*30);
+            String token = AppJWTUtil.createToken(responseJson.getOpenid(),0,0,30, AppJWTUtil.sec);
             System.out.println(token);
             final UserInfo userInfo = userInfoRepository.findByOpenId(responseJson.getOpenid());
             if (userInfo != null) {
@@ -56,6 +53,7 @@ public class LoginController {
                 respJson.setAvatar_utl(userInfo.getAvatar_url());
                 respJson.setU_type(userInfo.getU_type());
                 respJson.setNick_name(userInfo.getNick_name());
+                respJson.setToken(token);
             }
             return respJson;
         }else {

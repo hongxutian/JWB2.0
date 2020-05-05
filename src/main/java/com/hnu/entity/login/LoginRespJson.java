@@ -16,6 +16,7 @@ public class LoginRespJson {
     private String nick_name;
     private String avatar_utl;
     private String gender;
+    private String token;
 
     public int getU_type() {
         return u_type;
@@ -55,5 +56,13 @@ public class LoginRespJson {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }
