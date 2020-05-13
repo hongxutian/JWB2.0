@@ -14,12 +14,14 @@ public class Limit {
     private int start;
     private int limit;
     private int id;
+    private int typea;//标识查询的是物资服务信息还是生活服务信息的发布
+    private int typeb;//标识查询的是物资服务信息还是生活服务信息的提供
 
     public Limit(int id) {
 
     }
 
-    public Limit(float maxLon, float minLon, float maxLat, float minLat, Date startTime, Date endTime, int start, int limit, int id) {
+    public Limit(float maxLon, float minLon, float maxLat, float minLat, Date startTime, Date endTime, int start, int limit, int id, int typea, int typeb) {
         this.maxLon = maxLon;
         this.minLon = minLon;
         this.maxLat = maxLat;
@@ -29,6 +31,8 @@ public class Limit {
         this.start = start;
         this.limit = limit;
         this.id = id;
+        this.typea = typea;
+        this.typeb = typeb;
     }
 
     public int getId() {
@@ -101,5 +105,21 @@ public class Limit {
 
     public void setLimit(int limit) {
         this.limit = limit;
+    }
+
+    public int getTypea() {
+        return typea;
+    }
+
+    public void setTypea(int typea) {
+        this.typea = typea;
+    }
+
+    public int getTypeb() {
+        return typeb;
+    }
+
+    public void setTypeb(int typeb) {
+        this.typeb = typeb;
     }
 }

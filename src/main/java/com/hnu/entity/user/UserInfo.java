@@ -1,5 +1,9 @@
 package com.hnu.entity.user;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(value = "提交的用户基本信息")
 public class UserInfo {
 
 
@@ -20,20 +24,35 @@ public class UserInfo {
      * street_number : 2号
      */
 
+    @ApiModelProperty(value = "不需要填写")
     private int id;
+    @ApiModelProperty(value = "用户类型")
     private int u_type;
+    @ApiModelProperty(value = "openid")
     private String open_id;
+    @ApiModelProperty(value = "用户名")
     private String nick_name;
+    @ApiModelProperty(value = "用户的头像的地址")
     private String avatar_url;
+    @ApiModelProperty(value = "用户性别")
     private String gender;
+    @ApiModelProperty(value = "商店名字")
     private String store_name;
+    @ApiModelProperty(value = "经度")
     private float m_longitude;
+    @ApiModelProperty(value = "纬度")
     private float m_latitude;
+    @ApiModelProperty(value = "国家")
     private String nation;
+    @ApiModelProperty(value = "市")
     private String city;
+    @ApiModelProperty(value = "省")
     private String province;
+    @ApiModelProperty(value = "区")
     private String district;
+    @ApiModelProperty(value = "街道")
     private String street;
+    @ApiModelProperty(value = "街道号")
     private String street_number;
 
     public int getId() {

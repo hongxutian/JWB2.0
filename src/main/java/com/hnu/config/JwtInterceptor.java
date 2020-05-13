@@ -17,6 +17,7 @@ public class JwtInterceptor implements HandlerInterceptor {
                              HttpServletResponse response,
                              Object handler) {
         System.out.println("拦截器执行");
+        System.out.print("拦截路径"+request.getRequestURL()+"\n");
         JSONObject back = null;
         // 判断是否登陆逻辑
         //true 放行，false 拦截

@@ -8,6 +8,8 @@ import com.hnu.repository.UserInfoRepository;
 import com.hnu.utils.AppJWTUtil;
 import com.hnu.utils.WXAPPInfo;
 import com.hnu.utils.WebRequestUtil;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -29,7 +31,8 @@ public class LoginController {
      */
     @RequestMapping(value = "/UserLogin",method = RequestMethod.GET,produces="application/json;charset=UTF-8")
     @ResponseBody
-    public LoginRespJson userLogin(@RequestParam("js_code") String js_code){
+    @ApiOperation(value = "用户登录接口")
+    public LoginRespJson userLogin(@RequestParam("js_code") @ApiParam(value = "小程序打开时从微信后台获取的",required = true) String js_code){
 
         Map<String,String> req = new LinkedHashMap<>();
         req.put("appid", WXAPPInfo.appid);
@@ -50,7 +53,7 @@ public class LoginController {
             if (userInfo != null) {
                 respJson.setGender(userInfo.getGender());
                 respJson.setOpen_id(userInfo.getOpen_id());
-                respJson.setAvatar_utl(userInfo.getAvatar_url());
+                respJson.setAvatar_url(userInfo.getAvatar_url());
                 respJson.setU_type(userInfo.getU_type());
                 respJson.setNick_name(userInfo.getNick_name());
                 respJson.setToken(token);

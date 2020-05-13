@@ -1,8 +1,11 @@
 package com.hnu.entity.publish;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.math.BigDecimal;
 import java.util.List;
-
+@ApiModel
 public class PublishJson {
 
 
@@ -25,22 +28,38 @@ public class PublishJson {
      * store_name : 默默药店
      */
 
+    @ApiModelProperty(value = "用户的openid")
     private String u_id;
+    @ApiModelProperty(value = "经度")
     private BigDecimal lon;
+    @ApiModelProperty(value = "纬度")
     private BigDecimal lat;
+    @ApiModelProperty(value = "国家")
     private String nation;
+    @ApiModelProperty(value = "省")
     private String province;
+    @ApiModelProperty(value = "市")
     private String city;
+    @ApiModelProperty(value = "区/县")
     private String district;
+    @ApiModelProperty(value = "街道")
     private String street;
+    @ApiModelProperty(value = "街道号")
     private String street_number;
+    @ApiModelProperty(value = "发布内容的描述")
     private String content;
     private String demand_id;
+    @ApiModelProperty(value = "发布的类型，0发布医疗资源需求信息，1发布医疗资源信息，2发布服务资源需求信息，3发布服务资源信息")
     private int type;
+    @ApiModelProperty(value = "有效范围")
     private int range;
+    @ApiModelProperty(value = "有效时间")
     private int aging;
+    @ApiModelProperty(value = "提交时间",example = "2020-03-23 15:23:23")
     private String subtime;
+    @ApiModelProperty(value = "商店或社区名，发布需求时不需要，发布医疗资源时是商店名，发布服务资源时是社区名")
     private String store_name;
+    @ApiModelProperty(value = "发布的资源内容")
     private List<GoodsBean> goods;
 
     public String getU_id() {

@@ -2,6 +2,8 @@ package com.hnu.controller;
 
 import com.hnu.entity.user.UserInfo;
 import com.hnu.repository.UserInfoRepository;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +18,8 @@ public class RegisterController {
     }
 
     @PostMapping("/UserRegister")
-    public String register(@RequestBody UserInfo userInfo) {
+    @ApiOperation(value = "用户注册接口",notes = "返回的内容为JSON字符串，{\"msg\":\"UserRegistered\"}和{\"msg\": \"NewUserRegisterSuccess\"}")
+    public String register(@RequestBody @ApiParam("提交的用户基本信息") UserInfo userInfo) {
         //利用open_id验证用户是否注册过
         if (userInfoRepository.findByOpenId(userInfo.getOpen_id()) != null) {
             System.out.println("用户已注册");

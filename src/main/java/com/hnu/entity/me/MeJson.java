@@ -1,5 +1,9 @@
 package com.hnu.entity.me;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(value = "请求内容")
 public class MeJson {
 
 
@@ -10,9 +14,13 @@ public class MeJson {
      * end_time : 2020-2-13 5:19:28
      */
 
+    @ApiModelProperty(value = "用户的openid")
     private String u_id;
+    @ApiModelProperty(value = "查询每页的数量")
     private String page_items_count;
+    @ApiModelProperty(value = "开始时间")
     private String start_time;
+    @ApiModelProperty(value = "结束时间")
     private String end_time;
 
     public String getU_id() {

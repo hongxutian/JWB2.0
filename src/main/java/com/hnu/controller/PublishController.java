@@ -10,6 +10,10 @@ import com.hnu.repository.UserInfoRepository;
 import com.hnu.server.PublishService;
 import com.hnu.utils.WXAPPInfo;
 import com.hnu.utils.WebRequestUtil;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +36,15 @@ public class PublishController {
      */
     @PostMapping(value = "/SupAndDem")
     @ResponseBody
-    public String publish(@RequestBody PublishJson content, HttpServletResponse response) {
+    @ApiOperation(value = "发布资源或者请求"
+            ,notes = "返回的内容有下列JSON字符串之一," +
+            "{\"status_code\":\"500\",\"msg\":\"用户不存在！\"}" +
+            ",{\"status_code\":\"500\",\"msg\":\"内容涉及敏感词！\"}," +
+            "{\"status_code\":\"500\",\"msg\":\"未知错误！\"}," +
+            "{\"status_code\":\"500\",\"msg\":\"操作失败！\"}," +
+            "{\"status_code\":\"201\",\"msg\":\"操作成功\"}," +
+            "{\"status_code\":\"500\",\"msg\":\"发布失败\"}")
+    public String publish(@RequestBody @ApiParam(value = "请求的内容") PublishJson content, HttpServletResponse response) {
         System.out.println(content.toString());
         JSONObject back = new JSONObject();//返回的消息
         response.setStatus(HttpServletResponse.SC_CREATED);//状态

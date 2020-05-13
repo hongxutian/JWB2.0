@@ -12,6 +12,7 @@
        <if test="id != -1">
            and d.u_id_id = #{id}
        </if>
+       and (d.s_type = #{typea} or d.s_type = #{typeb})
        order by d.s_subtime DESC
        limit #{start},#{limit};
 

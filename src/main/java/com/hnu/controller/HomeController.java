@@ -12,6 +12,8 @@ import com.hnu.repository.CommentRepository;
 import com.hnu.repository.DemandRepository;
 import com.hnu.repository.MaterialRepository;
 import com.hnu.repository.UserInfoRepository;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
@@ -37,14 +39,18 @@ public class HomeController {
 
     @PostMapping("/new/{page}")
     @ResponseBody
-    public List<NewResponseJson> newest(@RequestBody NewJson newJson, @PathVariable() int page) {
+    @ApiOperation(value = "最新页面请求接口")
+    public List<NewResponseJson> newest(@RequestBody @ApiParam(value = "请求内容") NewJson newJson, @PathVariable() @ApiParam(value = "查询第几页数据") int page,
+                                        @RequestParam @ApiParam(value = "查询的数据类型,life 生活服务，supply 医疗物资服务") String type) {
 
         System.out.println(newJson);
-        return getNewAndNearbyResponse(newJson, page);
+        return getNewAndNearbyResponse(newJson, page,type);
     }
 
     @PostMapping("/me/{page}")
-    public List<NewResponseJson> getMe(@RequestBody MeJson meJson, @PathVariable int page) {
+    @ApiOperation(value = "我的页面请求接口")
+    public List<NewResponseJson> getMe(@RequestBody @ApiParam(value = "请求内容") MeJson meJson, @PathVariable @ApiParam(value = "查询第几页数据") int page,
+                                       @RequestParam @ApiParam(value = "查询的数据类型,life 生活服务，supply 医疗物资服务") String type) {
 //        返回结果和最新的json格式一致
         //先查该用户
         final UserInfo user = userInfoRepository.findByOpenId(meJson.getU_id());
@@ -54,7 +60,15 @@ public class HomeController {
             Date date1 = format.parse(meJson.getStart_time());
             Date date2 = format.parse(meJson.getEnd_time());
             //查询符合条件的需求数据
-            Limit limit = new Limit(180, 0, 90, 0, date1, date2, (page - 1) * counts, counts, user.getId());
+            //Limit limit = new Limit(180, 0, 90, 0, date1, date2, (page - 1) * counts, counts, user.getId());
+            Limit limit;
+            if(type.equals("life")){
+                limit = new Limit(180, 0, 90, 0, date1, date2, (page - 1) * counts, counts, user.getId(),2,3);
+            }else if (type.equals("supply")){
+                limit = new Limit(180, 0, 90, 0, date1, date2, (page - 1) * counts, counts, user.getId(),0,1);
+            }else {
+                limit = new Limit(180, 0, 90, 0, date1, date2, (page - 1) * counts, counts, user.getId(),0,1);
+            }
             return getResponseJsons(format, limit);
         } catch (ParseException e) {
             e.printStackTrace();
@@ -63,12 +77,14 @@ public class HomeController {
     }
 
     @PostMapping("/nearby/{page}")
-    public List<NewResponseJson> getNearBy(@RequestBody NewJson newJson, @PathVariable int page) {
+    @ApiOperation(value = "附近页面请求接口")
+    public List<NewResponseJson> getNearBy(@RequestBody @ApiParam(value = "请求内容") NewJson newJson, @PathVariable @ApiParam(value = "查询第几页数据") int page,
+                                           @RequestParam @ApiParam(value = "查询的数据类型,life 生活服务，supply 医疗物资服务") String type) {
         System.out.println("start --> getNearBy");
-        return getNewAndNearbyResponse(newJson, page);
+        return getNewAndNearbyResponse(newJson, page,type);
     }
 
-    private List<NewResponseJson> getNewAndNearbyResponse(@RequestBody NewJson newJson, @PathVariable int page) {
+    private List<NewResponseJson> getNewAndNearbyResponse(@RequestBody NewJson newJson, @PathVariable int page,@RequestParam String type) {
         //计算经纬度搜索范围 纬度1度是111KM,1分是1.85KM
         float max_lon = Float.parseFloat(newJson.getLongitude()) + Float.parseFloat(newJson.getSearchRange()) / 111;
         float min_lon = Float.parseFloat(newJson.getLongitude()) - Float.parseFloat(newJson.getSearchRange()) / 111;
@@ -80,7 +96,14 @@ public class HomeController {
             Date date1 = format.parse(newJson.getStartTime());
             Date date2 = format.parse(newJson.getEndTime());
             //查询符合条件的需求数据
-            Limit limit = new Limit(max_lon, min_lon, max_lat, min_lat, date1, date2, (page - 1) * counts, counts, -1);
+            Limit limit;
+            if(type.equals("life")){
+                limit = new Limit(max_lon, min_lon, max_lat, min_lat, date1, date2, (page - 1) * counts, counts, -1,2,3);
+            }else if (type.equals("supply")){
+                limit = new Limit(max_lon, min_lon, max_lat, min_lat, date1, date2, (page - 1) * counts, counts, -1,0,1);
+            }else {
+                limit = new Limit(max_lon, min_lon, max_lat, min_lat, date1, date2, (page - 1) * counts, counts, -1,0,1);
+            }
             return getResponseJsons(format, limit);
         } catch (ParseException e) {
             e.printStackTrace();
