@@ -10,16 +10,17 @@ import com.hnu.repository.UserInfoRepository;
 import com.hnu.server.PublishService;
 import com.hnu.utils.WXAPPInfo;
 import com.hnu.utils.WebRequestUtil;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 public class PublishController {
@@ -35,10 +36,19 @@ public class PublishController {
      */
     @PostMapping(value = "/SupAndDem")
     @ResponseBody
-    public String publish(@RequestBody PublishJson content, HttpServletResponse response) {
+    @ApiOperation(value = "发布资源或者请求"
+            ,notes = "返回的内容有下列JSON字符串之一," +
+            "{\"status_code\":\"500\",\"msg\":\"用户不存在！\"}" +
+            ",{\"status_code\":\"500\",\"msg\":\"内容涉及敏感词！\"}," +
+            "{\"status_code\":\"500\",\"msg\":\"未知错误！\"}," +
+            "{\"status_code\":\"500\",\"msg\":\"操作失败！\"}," +
+            "{\"status_code\":\"201\",\"msg\":\"操作成功\"}," +
+            "{\"status_code\":\"500\",\"msg\":\"发布失败\"}")
+    public String publish(@RequestBody @ApiParam(value = "请求的内容") PublishJson content, HttpServletResponse response) {
         System.out.println(content.toString());
         JSONObject back = new JSONObject();//返回的消息
         response.setStatus(HttpServletResponse.SC_CREATED);//状态
+
         //先查用户是否存在
         final UserInfo userInfo = userInfoRepository.findByOpenId(content.getU_id());
         if (userInfo == null) {
@@ -66,6 +76,7 @@ public class PublishController {
             case PASS:
         }
         //检查通过，数据合规，封装数据
+
         Demand demand = new Demand();
         demand.setNick_name(userInfo.getNick_name());
         demand.setAvatar_url(userInfo.getAvatar_url());
@@ -88,13 +99,17 @@ public class PublishController {
             demand.setS_subtime(format.parse(content.getSubtime()));
         } catch (ParseException e) {
             e.printStackTrace();
+            demand.setS_subtime(new Date());
         }
         demand.setStore_name(content.getStore_name());
 
+
         List<GoodsBean> goods = content.getGoods();
-        List<Material> resources = new ArrayList<>();
-        if (goods != null) {
+        List<Material> resources = null;
+        if (goods != null && goods.size()>0) {
+            resources = new ArrayList<>();
             for (GoodsBean good : goods) {
+
                 Material resource = new Material();
                 resource.setType(content.getType());
                 resource.setCount(good.getNum_or_price());

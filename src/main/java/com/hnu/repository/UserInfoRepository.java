@@ -1,5 +1,6 @@
 package com.hnu.repository;
 
+import com.hnu.entity.SearUserInforBean;
 import com.hnu.entity.user.UserInfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -11,6 +12,8 @@ public interface UserInfoRepository {
 
     void save(UserInfo userInfo);
 
-    UserInfo selectUserInfo(@Param("id") long id);
+    SearUserInforBean selectUserInfo(long id);
+
+    UserInfo selectById(long id);
 
 }

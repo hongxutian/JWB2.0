@@ -20,29 +20,18 @@ public class WXAPPInfo {
      * @return token，失败返回null
      */
     public static String getAccess_token(){
-        if(accessToken.equals("")){
-            JSONObject object = getAccessToken();
-            if(object==null){
-                return null;
-            }
-            accessToken = object.getString("access_token");
-            aging = object.getLongValue("expires_in");
-            getTime = System.currentTimeMillis()/1000;
+        if(!accessToken.equals("") && (System.currentTimeMillis()/1000-getTime)<aging){//判断token是否存在且是否过期，没有过期返回token
             return accessToken;
-        }else {
-            if((System.currentTimeMillis()/1000-getTime)<aging){
-                return accessToken;
-            }else {
-                JSONObject object = getAccessToken();
-                if(object==null){
-                    return null;
-                }
-                accessToken = object.getString("access_token");
-                aging = object.getLongValue("expires_in");
-                getTime = System.currentTimeMillis()/1000;
-                return accessToken;
-            }
         }
+        //向微信服务端请求token
+        JSONObject object = getAccessToken();
+        if(object==null){
+            return null;
+        }
+        accessToken = object.getString("access_token");
+        aging = object.getLongValue("expires_in");
+        getTime = System.currentTimeMillis()/1000;
+        return accessToken;
     }
 
     /**

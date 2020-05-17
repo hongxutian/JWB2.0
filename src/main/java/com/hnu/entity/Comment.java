@@ -1,5 +1,9 @@
 package com.hnu.entity;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(value = "提交评论的内容")
 public class Comment {
 
 
@@ -10,9 +14,13 @@ public class Comment {
      * subtime : 2020-03-02 12:12:12
      */
 
+    @ApiModelProperty(value = "用户的id")
     private String u_id;
+    @ApiModelProperty(value = "被评论的发布信息的id")
     private String demand_id;
+    @ApiModelProperty(value = "评论的内容")
     private String comment_content;
+    @ApiModelProperty(value = "评论的时间",example = "2020-02-23-23 13:23:23")
     private String subtime;
 
     public String getU_id() {

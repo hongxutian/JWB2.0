@@ -1,17 +1,26 @@
 package com.hnu.entity.newest;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
+@ApiModel(value = "新的页面请求的内容")
 public class NewJson {
 
+    @ApiModelProperty(value = "经度")
     private String longitude;
+    @ApiModelProperty(value = "纬度")
     private String latitude;
     @JsonAlias(value = "search_range")
+    @ApiModelProperty(value = "查询范围")
     private String searchRange;
     @JsonAlias(value = "page_items_count")
+    @ApiModelProperty(value = "查询时每页的数量")
     private String pageItemsCount;
     @JsonAlias(value = "start_time")
+    @ApiModelProperty(value = "开始时间")
     private String startTime;
+    @ApiModelProperty(value = "结束时间")
     @JsonAlias(value = "end_time")
     private String endTime;
 

@@ -1,15 +1,17 @@
 package com.hnu.server;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.hnu.entity.Demand;
+import com.hnu.entity.SearUserInforBean;
+import com.hnu.entity.SearchBean;
 import com.hnu.entity.user.UserInfo;
 import com.hnu.repository.DemandRepository;
 import com.hnu.repository.UserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -28,47 +30,53 @@ public class SearchService {
      * @param current_position 当前的位置
      * @return
      */
-    public String searchStores(String keyword,int page_items_count,int current_position){
+    public List<SearchBean> searchStores(String keyword,int page_items_count,int current_position){
         try {
             keyword = "%"+keyword+"%";
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             List<Demand> res = demandRepository.searchStores(keyword,page_items_count,current_position);
-            JSONArray array = new JSONArray();
+            List<SearchBean> r = new ArrayList<>();
             for(int i=0;i<res.size();i++){
                 Demand demand = res.get(i);
-                UserInfo userInfo = userInfoRepository.selectUserInfo(demand.getU_id_id());
-                JSONObject object = (JSONObject) JSON.toJSON(demand);
-                object.put("s_lon",demand.getS_lon());
-                object.put("s_lat",demand.getS_lat());
-                object.put("s_nation",demand.getS_nation());
-                object.put("s_city",demand.getS_city());
-                object.put("s_province",demand.getS_province());
-                object.put("s_street",demand.getS_street());
-                object.put("s_street_number",demand.getS_street_number());
-                object.put("s_content",demand.getS_content());
-                object.put("s_type",demand.getS_type());
-                object.put("s_range",demand.getS_range());
-                object.put("s_aging",demand.getS_aging());
-                object.put("s_subtime",demand.getS_subtime());
-                object.put("store_name",demand.getStore_name());
-                JSONObject child = new JSONObject();
-                child.put("u_type",userInfo.getU_type());
-                child.put("open_id",userInfo.getOpen_id());
-                child.put("nick_name",userInfo.getNick_name());
-                child.put("avatar_url",userInfo.getAvatar_url());
-                child.put("gender",userInfo.getGender());
-                child.put("store_name",userInfo.getStore_name());
-                child.put("m_longitude",userInfo.getM_longitude());
-                child.put("m_latitude",userInfo.getM_latitude());
-                child.put("nation",userInfo.getNation());
-                child.put("city",userInfo.getCity());
-                child.put("province",userInfo.getProvince());
-                child.put("district",userInfo.getDistrict());
-                child.put("street",userInfo.getStreet());
-                child.put("street_number",userInfo.getStreet_number());
-                object.put("u_id", child);
-                array.add(object);
+
+                SearchBean searchBean = new SearchBean();
+                SearUserInforBean userInfo = userInfoRepository.selectUserInfo(demand.getU_id_id());
+                searchBean.setS_lon(demand.getS_lon());
+                searchBean.setS_lat(demand.getS_lat());
+                searchBean.setS_nation(demand.getS_nation());
+                searchBean.setS_city(demand.getS_city());
+                searchBean.setS_province(demand.getS_province());
+                searchBean.setS_street(demand.getS_street());
+                searchBean.setS_street_number(demand.getS_street_number());
+                searchBean.setS_content(demand.getS_content());
+                searchBean.setS_type(demand.getS_type());
+                searchBean.setS_range(demand.getS_range());
+                searchBean.setS_aging(demand.getS_aging());
+                searchBean.setS_subtime(simpleDateFormat.format(demand.getS_subtime()));
+                searchBean.setStore_name(demand.getStore_name());
+
+                SearchBean.UIdBean uIdBean = new SearchBean.UIdBean();
+                uIdBean.setId(userInfo.getId());
+                uIdBean.setU_type(userInfo.getUType());
+                uIdBean.setOpen_id(userInfo.getOpenId());
+                uIdBean.setNick_name(userInfo.getNickName());
+                uIdBean.setAvatar_url(userInfo.getAvatarUrl());
+                uIdBean.setGender(userInfo.getGender());
+                uIdBean.setStore_name(userInfo.getStoreName());
+                uIdBean.setM_longitude(userInfo.getMLongitude());
+                uIdBean.setM_latitude(userInfo.getMLatitude());
+                uIdBean.setNation(userInfo.getNation());
+                uIdBean.setCity(userInfo.getCity());
+                uIdBean.setProvince(userInfo.getProvince());
+                uIdBean.setDistrict(userInfo.getDistrict());
+                uIdBean.setStreet(userInfo.getStreet());
+                uIdBean.setStreet_number(userInfo.getStreetNumber());
+                searchBean.setU_id(uIdBean);
+
+                r.add(searchBean);
+
             }
-            return array.toJSONString();
+            return r;
         }catch (RuntimeException e){
             e.printStackTrace();
             return null;

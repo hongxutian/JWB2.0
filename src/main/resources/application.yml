@@ -12,6 +12,10 @@ mybatis:
   type-aliases-package: com.hnu.entity
 
 server:
-  port: 7760
+  port: 443
+  ssl:
+    key-store-password: 3KHjfjRt
+    key-store-type: JKS
+    key-store: classpath:keystore.jks
 
 
