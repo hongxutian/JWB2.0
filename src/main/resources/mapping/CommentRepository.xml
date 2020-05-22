@@ -5,7 +5,7 @@
 <mapper namespace="com.hnu.repository.CommentRepository">
 
     <select id="findCommentsByDemandId" resultType="com.hnu.entity.newest.CommentInfoBean" parameterType="String">
-        select u.avatar_url as c_avatar_url, u.nick_name as c_nick_name, c.comment_content, c.subtime as c_subtime
+        select u.avatar_url as c_avatar_url,c.u_id as c_uid, u.nick_name as c_nick_name, c.comment_content, c.subtime as c_subtime
          from medical_resources_userinfo u, medical_resources_comment c
          where c.demand_id = #{demandId} and c.u_id = u.open_id
          order by c.subtime DESC;

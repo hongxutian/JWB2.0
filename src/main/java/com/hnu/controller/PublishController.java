@@ -57,24 +57,28 @@ public class PublishController {
             return back.toJSONString();
         }
         //进行内容校验
-        final WebRequestUtil.ContentValidate validate =
-                WebRequestUtil.checkContent(content.getContent() + content.getStore_name());
-        switch (validate) {
-            case SENSITIVE:
-                back.put("msg", "内容涉及敏感词！");
-                back.put("status_code", "500");
-                return back.toJSONString();
-            case ERROR:
-                back.put("msg", "未知错误！");
-                back.put("status_code", "500");
-                return back.toJSONString();
-            case TOKE_FAIL:
-            case FAIL:
-                back.put("msg", "操作失败！");
-                back.put("status_code", "500");
-                return back.toJSONString();
-            case PASS:
+        String check = content.getContent() + content.getStore_name();
+        if(check != null && !"".equals(check) ){
+            final WebRequestUtil.ContentValidate validate =
+                    WebRequestUtil.checkContent(check);
+            switch (validate) {
+                case SENSITIVE:
+                    back.put("msg", "内容涉及敏感词！");
+                    back.put("status_code", "500");
+                    return back.toJSONString();
+                case ERROR:
+                    back.put("msg", "未知错误！");
+                    back.put("status_code", "500");
+                    return back.toJSONString();
+                case TOKE_FAIL:
+                case FAIL:
+                    back.put("msg", "操作失败！");
+                    back.put("status_code", "500");
+                    return back.toJSONString();
+                case PASS:
+            }
         }
+
         //检查通过，数据合规，封装数据
 
         Demand demand = new Demand();
@@ -90,7 +94,12 @@ public class PublishController {
         demand.setS_district(content.getDistrict());
         demand.setS_street(content.getStreet());
         demand.setS_street_number(content.getStreet_number());
-        demand.setS_content(content.getContent());
+        if(content.getContent() == null)
+        {
+            demand.setS_content("");
+        }else {
+            demand.setS_content(content.getContent());
+        }
         demand.setS_type(content.getType());
         demand.setS_range(content.getRange());
         demand.setS_aging(content.getAging());

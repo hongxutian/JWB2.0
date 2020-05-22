@@ -10,6 +10,7 @@ public class CommentInfoBean {
      */
 
     private String comment_content;
+    private String c_uid;
     private String c_nick_name;
     private String c_avatar_url;
     private String c_subtime;
@@ -44,5 +45,13 @@ public class CommentInfoBean {
 
     public void setC_subtime(String c_subtime) {
         this.c_subtime = c_subtime;
+    }
+
+    public String getC_uid() {
+        return c_uid;
+    }
+
+    public void setC_uid(String c_uid) {
+        this.c_uid = c_uid;
     }
 }
