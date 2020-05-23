@@ -5,15 +5,15 @@
 <mapper namespace="com.hnu.repository.CommentRepository">
 
     <select id="findCommentsByDemandId" resultType="com.hnu.entity.newest.CommentInfoBean" parameterType="String">
-        select u.avatar_url as c_avatar_url,c.u_id as c_uid, u.nick_name as c_nick_name, c.comment_content, c.subtime as c_subtime
+        select u.avatar_url as c_avatar_url, c.u_id as c_uid, u.nick_name as c_nick_name, c.comment_content, c.subtime as c_subtime, c.reply_id as replyId
          from medical_resources_userinfo u, medical_resources_comment c
          where c.demand_id = #{demandId} and c.u_id = u.open_id
          order by c.subtime DESC;
     </select>
 
     <insert id="insertComment" parameterType="com.hnu.entity.Comment">
-        insert into medical_resources_comment (u_id, demand_id, subtime, comment_content)
-        values (#{u_id},#{demand_id},#{subtime},#{comment_content});
+        insert into medical_resources_comment (u_id, demand_id, subtime, comment_content, reply_id)
+        values (#{u_id},#{demand_id},#{subtime},#{comment_content},#{replyId});
     </insert>
 
 </mapper>

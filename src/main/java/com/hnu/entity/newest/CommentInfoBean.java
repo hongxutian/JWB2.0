@@ -14,6 +14,7 @@ public class CommentInfoBean {
     private String c_nick_name;
     private String c_avatar_url;
     private String c_subtime;
+    private String replyId;
 
     public String getComment_content() {
         return comment_content;
@@ -53,5 +54,13 @@ public class CommentInfoBean {
 
     public void setC_uid(String c_uid) {
         this.c_uid = c_uid;
+    }
+
+    public String getReplyId() {
+        return replyId;
+    }
+
+    public void setReplyId(String replyId) {
+        this.replyId = replyId;
     }
 }

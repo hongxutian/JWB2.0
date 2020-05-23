@@ -23,6 +23,8 @@ public class Comment {
     @ApiModelProperty(value = "评论的时间",example = "2020-02-23-23 13:23:23")
     private String subtime;
 
+    private String replyId;
+
     public String getU_id() {
         return u_id;
     }
@@ -53,5 +55,13 @@ public class Comment {
 
     public void setSubtime(String subtime) {
         this.subtime = subtime;
+    }
+
+    public String getReplyId() {
+        return replyId;
+    }
+
+    public void setReplyId(String replyId) {
+        this.replyId = replyId;
     }
 }
