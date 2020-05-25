@@ -27,4 +27,13 @@
         select * from medical_resources_userinfo where id = #{id}
     </select>
 
+    <update id="updateUserInfoById" parameterType="com.hnu.entity.user.UserInfo">
+        UPDATE medical_resources_userinfo
+        SET  u_type = #{u_type}, open_id = #{open_id}, nick_name = #{nick_name}, avatar_url = #{avatar_url},
+             gender = #{gender}, store_name = #{store_name}, m_longitude = #{m_longitude}, m_latitude = #{m_latitude},
+             nation = #{nation}, city = #{city}, province = #{province}, district = #{district}, street = #{street},
+             street_number = #{street_number}
+        where id = #{id}
+    </update>
+
 </mapper>

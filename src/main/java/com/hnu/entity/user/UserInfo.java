@@ -3,6 +3,8 @@ package com.hnu.entity.user;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import java.util.Objects;
+
 @ApiModel(value = "提交的用户基本信息")
 public class UserInfo {
 
@@ -193,5 +195,31 @@ public class UserInfo {
                 ", street='" + street + '\'' +
                 ", street_number='" + street_number + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserInfo userInfo = (UserInfo) o;
+        return u_type == userInfo.u_type &&
+                Float.compare(userInfo.m_longitude, m_longitude) == 0 &&
+                Float.compare(userInfo.m_latitude, m_latitude) == 0 &&
+                Objects.equals(open_id, userInfo.open_id) &&
+                Objects.equals(nick_name, userInfo.nick_name) &&
+                Objects.equals(avatar_url, userInfo.avatar_url) &&
+                Objects.equals(gender, userInfo.gender) &&
+                Objects.equals(store_name, userInfo.store_name) &&
+                Objects.equals(nation, userInfo.nation) &&
+                Objects.equals(city, userInfo.city) &&
+                Objects.equals(province, userInfo.province) &&
+                Objects.equals(district, userInfo.district) &&
+                Objects.equals(street, userInfo.street) &&
+                Objects.equals(street_number, userInfo.street_number);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, u_type, open_id, nick_name, avatar_url, gender, store_name, m_longitude, m_latitude, nation, city, province, district, street, street_number);
     }
 }

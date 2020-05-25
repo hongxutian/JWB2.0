@@ -16,4 +16,6 @@ public interface UserInfoRepository {
 
     UserInfo selectById(long id);
 
+    void updateUserInfoById(UserInfo userInfo);
+
 }
