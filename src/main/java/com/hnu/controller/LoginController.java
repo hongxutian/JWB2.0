@@ -11,6 +11,9 @@ import com.hnu.utils.WebRequestUtil;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -43,24 +46,23 @@ public class LoginController {
         final LoginResponseJson responseJson = JSON.parseObject(result, LoginResponseJson.class);
         LoginRespJson respJson = new LoginRespJson();
         //测试
-        System.out.println(Objects.requireNonNull(responseJson).toString());
+        System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())+":");
+        System.out.println("用户登陆");
+        System.out.println("微信返回:"+Objects.requireNonNull(responseJson).toString());
         if (responseJson.getErrcode() == 0) {
             //登录成功
             //生成token,有效期30分钟
             String token = AppJWTUtil.createToken(responseJson.getOpenid(),0,0,30, AppJWTUtil.sec);
-            System.out.println(token);
-            final UserInfo userInfo = userInfoRepository.findByOpenId(responseJson.getOpenid());
-            if (userInfo != null) {
-                respJson.setGender(userInfo.getGender());
-                respJson.setOpen_id(userInfo.getOpen_id());
-                respJson.setAvatar_url(userInfo.getAvatar_url());
-                respJson.setU_type(userInfo.getU_type());
-                respJson.setNick_name(userInfo.getNick_name());
-                respJson.setToken(token);
-            }
+            System.out.println("token:"+token);
+            respJson.setOpen_id(responseJson.getOpenid());
+            respJson.setToken(token);
+            System.out.println("登陆成功");
             return respJson;
         }else {
             //登录失败
+            respJson.setOpen_id("");
+            respJson.setToken("");
+            System.out.println("登陆失败");
             return respJson;
         }
     }
