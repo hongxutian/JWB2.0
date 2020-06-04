@@ -63,17 +63,17 @@ public class HomeController {
             //Limit limit = new Limit(180, 0, 90, 0, date1, date2, (page - 1) * counts, counts, user.getId());
             Limit limit;
             if(type.equals("life")){
-                limit = new Limit(180, 0, 90, 0, date1, date2, (page - 1) * counts, counts, user.getId(),2,3);
+                limit = new Limit(180, -180, 90, -90, date1, date2, (page - 1) * counts, counts, user.getId(),2,3);
             }else if (type.equals("supply")){
-                limit = new Limit(180, 0, 90, 0, date1, date2, (page - 1) * counts, counts, user.getId(),0,1);
+                limit = new Limit(180, -180, 90, -90, date1, date2, (page - 1) * counts, counts, user.getId(),0,1);
             }else {
-                limit = new Limit(180, 0, 90, 0, date1, date2, (page - 1) * counts, counts, user.getId(),0,1);
+                limit = new Limit(180, -180, 90, -90, date1, date2, (page - 1) * counts, counts, user.getId(),0,1);
             }
             return getResponseJsons(format, limit);
         } catch (ParseException e) {
             e.printStackTrace();
+            return new ArrayList<>();
         }
-        return new ArrayList<>();
     }
 
     @PostMapping("/nearby/{page}")
